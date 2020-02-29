@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B54758F5E31410B86B37D9F2 /* libPods-Toy And Learn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 557F85A1DF7E5DA4BFE2B2C6 /* libPods-Toy And Learn.a */; };
+		CE58214B240A5C8900727B07 /* client_449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE58214A240A5C8900727B07 /* client_449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com.plist */; };
 		CE6D523924093CA000AB9C53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D523824093CA000AB9C53 /* AppDelegate.swift */; };
 		CE6D523B24093CA000AB9C53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D523A24093CA000AB9C53 /* SceneDelegate.swift */; };
 		CE6D523D24093CA000AB9C53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D523C24093CA000AB9C53 /* ViewController.swift */; };
@@ -17,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		557F85A1DF7E5DA4BFE2B2C6 /* libPods-Toy And Learn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Toy And Learn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63FE6DABE475B43F803BDB54 /* Pods-Toy And Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toy And Learn.release.xcconfig"; path = "Target Support Files/Pods-Toy And Learn/Pods-Toy And Learn.release.xcconfig"; sourceTree = "<group>"; };
+		CE58214A240A5C8900727B07 /* client_449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
 		CE6D523524093CA000AB9C53 /* Toy And Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Toy And Learn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6D523824093CA000AB9C53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6D523A24093CA000AB9C53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +31,7 @@
 		CE6D524424093CA300AB9C53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6D524724093CA300AB9C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE6D524924093CA300AB9C53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4D3CA07C48BD033C85BB525 /* Pods-Toy And Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toy And Learn.debug.xcconfig"; path = "Target Support Files/Pods-Toy And Learn/Pods-Toy And Learn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54758F5E31410B86B37D9F2 /* libPods-Toy And Learn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89F0E893B843FE2EF547DC4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				557F85A1DF7E5DA4BFE2B2C6 /* libPods-Toy And Learn.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6F22C4FFEA78D790966333C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4D3CA07C48BD033C85BB525 /* Pods-Toy And Learn.debug.xcconfig */,
+				63FE6DABE475B43F803BDB54 /* Pods-Toy And Learn.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CE6D522C24093CA000AB9C53 = {
 			isa = PBXGroup;
 			children = (
+				CE58214A240A5C8900727B07 /* client_449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com.plist */,
 				CE6D523724093CA000AB9C53 /* Toy And Learn */,
 				CE6D523624093CA000AB9C53 /* Products */,
+				B6F22C4FFEA78D790966333C /* Pods */,
+				89F0E893B843FE2EF547DC4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE6D524C24093CA300AB9C53 /* Build configuration list for PBXNativeTarget "Toy And Learn" */;
 			buildPhases = (
+				F90140006CE3B8A12ECE13BA /* [CP] Check Pods Manifest.lock */,
 				CE6D523124093CA000AB9C53 /* Sources */,
 				CE6D523224093CA000AB9C53 /* Frameworks */,
 				CE6D523324093CA000AB9C53 /* Resources */,
+				386C584F3E71F789D84FECA5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,11 +159,54 @@
 			files = (
 				CE6D524824093CA300AB9C53 /* LaunchScreen.storyboard in Resources */,
 				CE6D524524093CA300AB9C53 /* Assets.xcassets in Resources */,
+				CE58214B240A5C8900727B07 /* client_449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com.plist in Resources */,
 				CE6D524024093CA000AB9C53 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		386C584F3E71F789D84FECA5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Toy And Learn/Pods-Toy And Learn-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Toy And Learn/Pods-Toy And Learn-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Toy And Learn/Pods-Toy And Learn-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F90140006CE3B8A12ECE13BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Toy And Learn-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE6D523124093CA000AB9C53 /* Sources */ = {
@@ -286,6 +358,7 @@
 		};
 		CE6D524D24093CA300AB9C53 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4D3CA07C48BD033C85BB525 /* Pods-Toy And Learn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +376,7 @@
 		};
 		CE6D524E24093CA300AB9C53 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63FE6DABE475B43F803BDB54 /* Pods-Toy And Learn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        GIDSignIn.sharedInstance().clientID = "449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com"
+
         return true
     }
 
@@ -33,6 +35,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+         let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String
+               let annotation = options[UIApplication.OpenURLOptionsKey.annotation]
+               return GIDSignIn.sharedInstance().handle(url,
+                                                        sourceApplication: sourceApplication,
+                                                        annotation: annotation)
+
+    }
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
