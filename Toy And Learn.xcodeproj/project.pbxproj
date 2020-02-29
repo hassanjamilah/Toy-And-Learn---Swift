@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B54758F5E31410B86B37D9F2 /* libPods-Toy And Learn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 557F85A1DF7E5DA4BFE2B2C6 /* libPods-Toy And Learn.a */; };
 		CE58214B240A5C8900727B07 /* client_449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE58214A240A5C8900727B07 /* client_449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com.plist */; };
+		CE582155240A7DD000727B07 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE582154240A7DD000727B07 /* NetworkHelper.swift */; };
+		CE582157240A7DDB00727B07 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE582156240A7DDB00727B07 /* ApiClient.swift */; };
 		CE6D523924093CA000AB9C53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D523824093CA000AB9C53 /* AppDelegate.swift */; };
 		CE6D523B24093CA000AB9C53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D523A24093CA000AB9C53 /* SceneDelegate.swift */; };
 		CE6D523D24093CA000AB9C53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D523C24093CA000AB9C53 /* ViewController.swift */; };
@@ -16,12 +18,28 @@
 		CE6D524324093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE6D524124093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld */; };
 		CE6D524524093CA300AB9C53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6D524424093CA300AB9C53 /* Assets.xcassets */; };
 		CE6D524824093CA300AB9C53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6D524624093CA300AB9C53 /* LaunchScreen.storyboard */; };
+		CEF7D263240A8C2600D8C358 /* NetworkHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7D262240A8C2600D8C358 /* NetworkHelperTests.swift */; };
+		CEF7D26B240A8E9F00D8C358 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7D26A240A8E9F00D8C358 /* Category.swift */; };
+		CEF7D26D240A8EA800D8C358 /* Toy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7D26C240A8EA800D8C358 /* Toy.swift */; };
+		CEF7D26F240A8EBD00D8C358 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7D26E240A8EBD00D8C358 /* Story.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEF7D265240A8C2600D8C358 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE6D522D24093CA000AB9C53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE6D523424093CA000AB9C53;
+			remoteInfo = "Toy And Learn";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		557F85A1DF7E5DA4BFE2B2C6 /* libPods-Toy And Learn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Toy And Learn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FE6DABE475B43F803BDB54 /* Pods-Toy And Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toy And Learn.release.xcconfig"; path = "Target Support Files/Pods-Toy And Learn/Pods-Toy And Learn.release.xcconfig"; sourceTree = "<group>"; };
 		CE58214A240A5C8900727B07 /* client_449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
+		CE582154240A7DD000727B07 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		CE582156240A7DDB00727B07 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		CE6D523524093CA000AB9C53 /* Toy And Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Toy And Learn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6D523824093CA000AB9C53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6D523A24093CA000AB9C53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +49,12 @@
 		CE6D524424093CA300AB9C53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6D524724093CA300AB9C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE6D524924093CA300AB9C53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEF7D260240A8C2600D8C358 /* NetworkHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF7D262240A8C2600D8C358 /* NetworkHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelperTests.swift; sourceTree = "<group>"; };
+		CEF7D264240A8C2600D8C358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEF7D26A240A8E9F00D8C358 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		CEF7D26C240A8EA800D8C358 /* Toy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toy.swift; sourceTree = "<group>"; };
+		CEF7D26E240A8EBD00D8C358 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		D4D3CA07C48BD033C85BB525 /* Pods-Toy And Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toy And Learn.debug.xcconfig"; path = "Target Support Files/Pods-Toy And Learn/Pods-Toy And Learn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -40,6 +64,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B54758F5E31410B86B37D9F2 /* libPods-Toy And Learn.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF7D25D240A8C2600D8C358 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,11 +94,72 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE58214C240A7D2800727B07 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CE582154240A7DD000727B07 /* NetworkHelper.swift */,
+				CE582156240A7DDB00727B07 /* ApiClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CE58214D240A7D3600727B07 /* DatabaseUtils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DatabaseUtils;
+			sourceTree = "<group>";
+		};
+		CE58214E240A7D3D00727B07 /* UIUtils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIUtils;
+			sourceTree = "<group>";
+		};
+		CE58214F240A7D4A00727B07 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEF7D26A240A8E9F00D8C358 /* Category.swift */,
+				CEF7D26C240A8EA800D8C358 /* Toy.swift */,
+				CEF7D26E240A8EBD00D8C358 /* Story.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE582150240A7D4F00727B07 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE6D523E24093CA000AB9C53 /* Main.storyboard */,
+				CE6D524424093CA300AB9C53 /* Assets.xcassets */,
+				CE6D524624093CA300AB9C53 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE582151240A7D5300727B07 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE6D523C24093CA000AB9C53 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CE582152240A7D6100727B07 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CE6D523824093CA000AB9C53 /* AppDelegate.swift */,
+				CE6D523A24093CA000AB9C53 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		CE6D522C24093CA000AB9C53 = {
 			isa = PBXGroup;
 			children = (
 				CE58214A240A5C8900727B07 /* client_449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com.plist */,
 				CE6D523724093CA000AB9C53 /* Toy And Learn */,
+				CEF7D261240A8C2600D8C358 /* NetworkHelperTests */,
 				CE6D523624093CA000AB9C53 /* Products */,
 				B6F22C4FFEA78D790966333C /* Pods */,
 				89F0E893B843FE2EF547DC4C /* Frameworks */,
@@ -78,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				CE6D523524093CA000AB9C53 /* Toy And Learn.app */,
+				CEF7D260240A8C2600D8C358 /* NetworkHelperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,16 +178,26 @@
 		CE6D523724093CA000AB9C53 /* Toy And Learn */ = {
 			isa = PBXGroup;
 			children = (
-				CE6D523824093CA000AB9C53 /* AppDelegate.swift */,
-				CE6D523A24093CA000AB9C53 /* SceneDelegate.swift */,
-				CE6D523C24093CA000AB9C53 /* ViewController.swift */,
-				CE6D523E24093CA000AB9C53 /* Main.storyboard */,
-				CE6D524424093CA300AB9C53 /* Assets.xcassets */,
-				CE6D524624093CA300AB9C53 /* LaunchScreen.storyboard */,
+				CE582152240A7D6100727B07 /* App */,
+				CE58214C240A7D2800727B07 /* Networking */,
+				CE582151240A7D5300727B07 /* Controller */,
+				CE582150240A7D4F00727B07 /* View */,
+				CE58214F240A7D4A00727B07 /* Model */,
+				CE58214E240A7D3D00727B07 /* UIUtils */,
+				CE58214D240A7D3600727B07 /* DatabaseUtils */,
 				CE6D524924093CA300AB9C53 /* Info.plist */,
 				CE6D524124093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld */,
 			);
 			path = "Toy And Learn";
+			sourceTree = "<group>";
+		};
+		CEF7D261240A8C2600D8C358 /* NetworkHelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEF7D262240A8C2600D8C358 /* NetworkHelperTests.swift */,
+				CEF7D264240A8C2600D8C358 /* Info.plist */,
+			);
+			path = NetworkHelperTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +222,24 @@
 			productReference = CE6D523524093CA000AB9C53 /* Toy And Learn.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CEF7D25F240A8C2600D8C358 /* NetworkHelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEF7D269240A8C2600D8C358 /* Build configuration list for PBXNativeTarget "NetworkHelperTests" */;
+			buildPhases = (
+				CEF7D25C240A8C2600D8C358 /* Sources */,
+				CEF7D25D240A8C2600D8C358 /* Frameworks */,
+				CEF7D25E240A8C2600D8C358 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEF7D266240A8C2600D8C358 /* PBXTargetDependency */,
+			);
+			name = NetworkHelperTests;
+			productName = NetworkHelperTests;
+			productReference = CEF7D260240A8C2600D8C358 /* NetworkHelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -131,6 +252,10 @@
 				TargetAttributes = {
 					CE6D523424093CA000AB9C53 = {
 						CreatedOnToolsVersion = 11.3;
+					};
+					CEF7D25F240A8C2600D8C358 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = CE6D523424093CA000AB9C53;
 					};
 				};
 			};
@@ -148,6 +273,7 @@
 			projectRoot = "";
 			targets = (
 				CE6D523424093CA000AB9C53 /* Toy And Learn */,
+				CEF7D25F240A8C2600D8C358 /* NetworkHelperTests */,
 			);
 		};
 /* End PBXProject section */
@@ -161,6 +287,13 @@
 				CE6D524524093CA300AB9C53 /* Assets.xcassets in Resources */,
 				CE58214B240A5C8900727B07 /* client_449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com.plist in Resources */,
 				CE6D524024093CA000AB9C53 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF7D25E240A8C2600D8C358 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,14 +346,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF7D26D240A8EA800D8C358 /* Toy.swift in Sources */,
 				CE6D523D24093CA000AB9C53 /* ViewController.swift in Sources */,
 				CE6D524324093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld in Sources */,
+				CE582155240A7DD000727B07 /* NetworkHelper.swift in Sources */,
 				CE6D523924093CA000AB9C53 /* AppDelegate.swift in Sources */,
 				CE6D523B24093CA000AB9C53 /* SceneDelegate.swift in Sources */,
+				CE582157240A7DDB00727B07 /* ApiClient.swift in Sources */,
+				CEF7D26B240A8E9F00D8C358 /* Category.swift in Sources */,
+				CEF7D26F240A8EBD00D8C358 /* Story.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF7D25C240A8C2600D8C358 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF7D263240A8C2600D8C358 /* NetworkHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEF7D266240A8C2600D8C358 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE6D523424093CA000AB9C53 /* Toy And Learn */;
+			targetProxy = CEF7D265240A8C2600D8C358 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CE6D523E24093CA000AB9C53 /* Main.storyboard */ = {
@@ -392,6 +546,44 @@
 			};
 			name = Release;
 		};
+		CEF7D267240A8C2600D8C358 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NetworkHelperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andalus.NetworkHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toy And Learn.app/Toy And Learn";
+			};
+			name = Debug;
+		};
+		CEF7D268240A8C2600D8C358 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NetworkHelperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andalus.NetworkHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toy And Learn.app/Toy And Learn";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -409,6 +601,15 @@
 			buildConfigurations = (
 				CE6D524D24093CA300AB9C53 /* Debug */,
 				CE6D524E24093CA300AB9C53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEF7D269240A8C2600D8C358 /* Build configuration list for PBXNativeTarget "NetworkHelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF7D267240A8C2600D8C358 /* Debug */,
+				CEF7D268240A8C2600D8C358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
