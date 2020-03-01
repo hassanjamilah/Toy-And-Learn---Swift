@@ -95,13 +95,6 @@ class MaterialDataUtils{
     }
     
     
-    
-    
-    
-    
-    
-    
-    
     //MARK: Search Materials Methods
     /**
      Get all the materials from the database
@@ -140,7 +133,7 @@ class MaterialDataUtils{
         
     }
     
-    
+   
     
 }
 
