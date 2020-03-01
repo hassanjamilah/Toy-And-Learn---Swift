@@ -8,7 +8,13 @@
 
 import Foundation
 
+struct AllCats:Codable{
+    let categories:[Category]
+}
+
 struct Category:Codable {
+    
+    
     let categoryID:Int
     let categoryName:String
     let categoryImageName:String

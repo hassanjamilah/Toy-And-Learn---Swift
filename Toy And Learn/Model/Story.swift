@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct AllStories:Codable{
+    let stories:[Story]
+}
+
 struct Story:Codable{
     let storyHtmlURLString:String
     let storyServerID:Int
@@ -27,3 +31,5 @@ struct Story:Codable{
         case storyTitle = "Story_Title"
     }
 }
+
+

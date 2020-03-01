@@ -24,8 +24,8 @@ class NetworkHelper {
                 return EndPoints.base_url + "get_all_toy_cats.php"
             case .SearchStory(let minAge, let maxAge , let keyWord):
                 return EndPoints.base_url + "get_story.php?minage=\(minAge)&maxage=\(maxAge)&keyword=\(keyWord)"
-            case .searchToy(let minAge, let maxAge, let catID, let keyWord):
-                return EndPoints.base_url + "https://toyandlearn.000webhostapp.com/get_toy.php?catid=\(catID)&minage=\(minAge)&maxage=\(maxAge)&keyword=\(keyWord)"
+            case .searchToy(let catID ,  let minAge, let maxAge , let keyWord):
+                return EndPoints.base_url + "get_toy.php?catid=\(catID)&minage=\(minAge)&maxage=\(maxAge)&keyword=\(keyWord)"
                 
             }
         }
@@ -41,6 +41,7 @@ class NetworkHelper {
      Used to do the api get requests
      */
     class func taskForGetRequest<ResponseType:Decodable>(url:URL , responseType:ResponseType.Type , handler:@escaping(ResponseType? , Error?)->Void){
+        print ("The url is : \(url)"  )
         let task = URLSession.shared.dataTask(with: url) { (data, resonse, error) in
             if let data = data {
                 let response = self.deocdeData(data: data, responseType: responseType)
@@ -66,6 +67,7 @@ class NetworkHelper {
             return response
         }catch {
             print ("Error parsing data from json")
+            print (error)
             return nil
         }
     }

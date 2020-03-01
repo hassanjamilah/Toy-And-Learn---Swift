@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,8 @@
 		CE6D524324093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE6D524124093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld */; };
 		CE6D524524093CA300AB9C53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6D524424093CA300AB9C53 /* Assets.xcassets */; };
 		CE6D524824093CA300AB9C53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6D524624093CA300AB9C53 /* LaunchScreen.storyboard */; };
+		CEC03A08240B33DD008B25B7 /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A07240B33DD008B25B7 /* ApiClientTests.swift */; };
+		CEC03A16240B36B0008B25B7 /* CodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A15240B36B0008B25B7 /* CodableTests.swift */; };
 		CEF7D263240A8C2600D8C358 /* NetworkHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7D262240A8C2600D8C358 /* NetworkHelperTests.swift */; };
 		CEF7D26B240A8E9F00D8C358 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7D26A240A8E9F00D8C358 /* Category.swift */; };
 		CEF7D26D240A8EA800D8C358 /* Toy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7D26C240A8EA800D8C358 /* Toy.swift */; };
@@ -25,6 +27,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CEC03A0A240B33DD008B25B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE6D522D24093CA000AB9C53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE6D523424093CA000AB9C53;
+			remoteInfo = "Toy And Learn";
+		};
+		CEC03A18240B36B0008B25B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE6D522D24093CA000AB9C53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE6D523424093CA000AB9C53;
+			remoteInfo = "Toy And Learn";
+		};
 		CEF7D265240A8C2600D8C358 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE6D522D24093CA000AB9C53 /* Project object */;
@@ -49,6 +65,12 @@
 		CE6D524424093CA300AB9C53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6D524724093CA300AB9C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE6D524924093CA300AB9C53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEC03A05240B33DD008B25B7 /* ApiClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApiClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC03A07240B33DD008B25B7 /* ApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientTests.swift; sourceTree = "<group>"; };
+		CEC03A09240B33DD008B25B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEC03A13240B36B0008B25B7 /* CodableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC03A15240B36B0008B25B7 /* CodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTests.swift; sourceTree = "<group>"; };
+		CEC03A17240B36B0008B25B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEF7D260240A8C2600D8C358 /* NetworkHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF7D262240A8C2600D8C358 /* NetworkHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelperTests.swift; sourceTree = "<group>"; };
 		CEF7D264240A8C2600D8C358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +86,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				B54758F5E31410B86B37D9F2 /* libPods-Toy And Learn.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC03A02240B33DD008B25B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC03A10240B36B0008B25B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +196,8 @@
 				CE58214A240A5C8900727B07 /* client_449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com.plist */,
 				CE6D523724093CA000AB9C53 /* Toy And Learn */,
 				CEF7D261240A8C2600D8C358 /* NetworkHelperTests */,
+				CEC03A06240B33DD008B25B7 /* ApiClientTests */,
+				CEC03A14240B36B0008B25B7 /* CodableTests */,
 				CE6D523624093CA000AB9C53 /* Products */,
 				B6F22C4FFEA78D790966333C /* Pods */,
 				89F0E893B843FE2EF547DC4C /* Frameworks */,
@@ -171,6 +209,8 @@
 			children = (
 				CE6D523524093CA000AB9C53 /* Toy And Learn.app */,
 				CEF7D260240A8C2600D8C358 /* NetworkHelperTests.xctest */,
+				CEC03A05240B33DD008B25B7 /* ApiClientTests.xctest */,
+				CEC03A13240B36B0008B25B7 /* CodableTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,6 +229,24 @@
 				CE6D524124093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld */,
 			);
 			path = "Toy And Learn";
+			sourceTree = "<group>";
+		};
+		CEC03A06240B33DD008B25B7 /* ApiClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEC03A07240B33DD008B25B7 /* ApiClientTests.swift */,
+				CEC03A09240B33DD008B25B7 /* Info.plist */,
+			);
+			path = ApiClientTests;
+			sourceTree = "<group>";
+		};
+		CEC03A14240B36B0008B25B7 /* CodableTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEC03A15240B36B0008B25B7 /* CodableTests.swift */,
+				CEC03A17240B36B0008B25B7 /* Info.plist */,
+			);
+			path = CodableTests;
 			sourceTree = "<group>";
 		};
 		CEF7D261240A8C2600D8C358 /* NetworkHelperTests */ = {
@@ -211,7 +269,6 @@
 				CE6D523124093CA000AB9C53 /* Sources */,
 				CE6D523224093CA000AB9C53 /* Frameworks */,
 				CE6D523324093CA000AB9C53 /* Resources */,
-				386C584F3E71F789D84FECA5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,6 +278,42 @@
 			productName = "Toy And Learn";
 			productReference = CE6D523524093CA000AB9C53 /* Toy And Learn.app */;
 			productType = "com.apple.product-type.application";
+		};
+		CEC03A04240B33DD008B25B7 /* ApiClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEC03A0C240B33DD008B25B7 /* Build configuration list for PBXNativeTarget "ApiClientTests" */;
+			buildPhases = (
+				CEC03A01240B33DD008B25B7 /* Sources */,
+				CEC03A02240B33DD008B25B7 /* Frameworks */,
+				CEC03A03240B33DD008B25B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEC03A0B240B33DD008B25B7 /* PBXTargetDependency */,
+			);
+			name = ApiClientTests;
+			productName = ApiClientTests;
+			productReference = CEC03A05240B33DD008B25B7 /* ApiClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CEC03A12240B36B0008B25B7 /* CodableTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEC03A1A240B36B0008B25B7 /* Build configuration list for PBXNativeTarget "CodableTests" */;
+			buildPhases = (
+				CEC03A0F240B36B0008B25B7 /* Sources */,
+				CEC03A10240B36B0008B25B7 /* Frameworks */,
+				CEC03A11240B36B0008B25B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEC03A19240B36B0008B25B7 /* PBXTargetDependency */,
+			);
+			name = CodableTests;
+			productName = CodableTests;
+			productReference = CEC03A13240B36B0008B25B7 /* CodableTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		CEF7D25F240A8C2600D8C358 /* NetworkHelperTests */ = {
 			isa = PBXNativeTarget;
@@ -253,6 +346,14 @@
 					CE6D523424093CA000AB9C53 = {
 						CreatedOnToolsVersion = 11.3;
 					};
+					CEC03A04240B33DD008B25B7 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = CE6D523424093CA000AB9C53;
+					};
+					CEC03A12240B36B0008B25B7 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = CE6D523424093CA000AB9C53;
+					};
 					CEF7D25F240A8C2600D8C358 = {
 						CreatedOnToolsVersion = 11.3;
 						TestTargetID = CE6D523424093CA000AB9C53;
@@ -274,6 +375,8 @@
 			targets = (
 				CE6D523424093CA000AB9C53 /* Toy And Learn */,
 				CEF7D25F240A8C2600D8C358 /* NetworkHelperTests */,
+				CEC03A04240B33DD008B25B7 /* ApiClientTests */,
+				CEC03A12240B36B0008B25B7 /* CodableTests */,
 			);
 		};
 /* End PBXProject section */
@@ -290,6 +393,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEC03A03240B33DD008B25B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC03A11240B36B0008B25B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEF7D25E240A8C2600D8C358 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,23 +417,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		386C584F3E71F789D84FECA5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Toy And Learn/Pods-Toy And Learn-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Toy And Learn/Pods-Toy And Learn-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Toy And Learn/Pods-Toy And Learn-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F90140006CE3B8A12ECE13BA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,6 +458,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEC03A01240B33DD008B25B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEC03A08240B33DD008B25B7 /* ApiClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC03A0F240B36B0008B25B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEC03A16240B36B0008B25B7 /* CodableTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEF7D25C240A8C2600D8C358 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,6 +485,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CEC03A0B240B33DD008B25B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE6D523424093CA000AB9C53 /* Toy And Learn */;
+			targetProxy = CEC03A0A240B33DD008B25B7 /* PBXContainerItemProxy */;
+		};
+		CEC03A19240B36B0008B25B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE6D523424093CA000AB9C53 /* Toy And Learn */;
+			targetProxy = CEC03A18240B36B0008B25B7 /* PBXContainerItemProxy */;
+		};
 		CEF7D266240A8C2600D8C358 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CE6D523424093CA000AB9C53 /* Toy And Learn */;
@@ -546,6 +672,82 @@
 			};
 			name = Release;
 		};
+		CEC03A0D240B33DD008B25B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ApiClientTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andalus.ApiClientTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toy And Learn.app/Toy And Learn";
+			};
+			name = Debug;
+		};
+		CEC03A0E240B33DD008B25B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ApiClientTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andalus.ApiClientTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toy And Learn.app/Toy And Learn";
+			};
+			name = Release;
+		};
+		CEC03A1B240B36B0008B25B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CodableTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andalus.CodableTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toy And Learn.app/Toy And Learn";
+			};
+			name = Debug;
+		};
+		CEC03A1C240B36B0008B25B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CodableTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andalus.CodableTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toy And Learn.app/Toy And Learn";
+			};
+			name = Release;
+		};
 		CEF7D267240A8C2600D8C358 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -601,6 +803,24 @@
 			buildConfigurations = (
 				CE6D524D24093CA300AB9C53 /* Debug */,
 				CE6D524E24093CA300AB9C53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEC03A0C240B33DD008B25B7 /* Build configuration list for PBXNativeTarget "ApiClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEC03A0D240B33DD008B25B7 /* Debug */,
+				CEC03A0E240B33DD008B25B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEC03A1A240B36B0008B25B7 /* Build configuration list for PBXNativeTarget "CodableTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEC03A1B240B36B0008B25B7 /* Debug */,
+				CEC03A1C240B36B0008B25B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

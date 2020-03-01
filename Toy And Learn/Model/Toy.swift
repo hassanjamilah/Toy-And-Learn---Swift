@@ -8,7 +8,12 @@
 
 import Foundation
 
+struct AllToys:Codable{
+    let toys:[Toy]
+}
+
 struct Toy:Codable{
+    
     let toyMaxAge:Int
     let toyMinAge:Int
     let toyCategoryID:Int
@@ -16,7 +21,7 @@ struct Toy:Codable{
     let toyServerID:Int
     let toyImagesString:String
     let toyName:String
-    let toyPrice:String
+    let toyPrice:Int
     
     enum CodingKeys:String , CodingKey{
         case toyMaxAge = "Toy_Age_Max"
