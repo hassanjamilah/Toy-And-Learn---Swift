@@ -26,9 +26,12 @@ class NetworkHelper {
                 return EndPoints.base_url + "get_story.php?minage=\(minAge)&maxage=\(maxAge)&keyword=\(keyWord)"
             case .searchToy(let catID ,  let minAge, let maxAge , let keyWord):
                 return EndPoints.base_url + "get_toy.php?catid=\(catID)&minage=\(minAge)&maxage=\(maxAge)&keyword=\(keyWord)"
-                
+             
+           
             }
         }
+        
+        
         
         var url:URL {
             return URL(string: urlString)!
@@ -73,20 +76,32 @@ class NetworkHelper {
     }
     
     class func loadImageFromURL(url:URL , handler:@escaping(UIImage? , Error?)->Void){
-        do {
-             let data = try Data(contentsOf: url)
-                let image = UIImage(data: data)
-            DispatchQueue.main.async {
-                handler(image , nil )
-            }
-       
-        }catch {
-            print ("Error in loading the image")
-            DispatchQueue.main.async {
-                handler(nil , error)
-            }
+        let q = DispatchQueue.global()
+        q.async {
+            do {
+                  let data = try Data(contentsOf: url)
+                     let image = UIImage(data: data)
+                 DispatchQueue.main.async {
+                     handler(image , nil )
+                 }
+            
+             }catch {
+                 print ("Error in loading the image")
+                 DispatchQueue.main.async {
+                     handler(nil , error)
+                 }
+             }
+            
         }
+        
        
     }
     
+    
+    class func getImageURL(imageName:String)->URL{
+        var  urlStr = EndPoints.images_base_url + "\(imageName)"
+        print ("The url str is : \(urlStr)")
+        urlStr = urlStr.replacingOccurrences(of: " ", with: "%20")
+        return URL(string: urlStr)!
+    }
 }

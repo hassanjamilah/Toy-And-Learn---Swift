@@ -34,4 +34,12 @@ struct Toy:Codable{
         case toyPrice = "Toy_Price"
     }
     
+     func getImagesArray()->[String]{
+        print("The toy images string is :\(toyImagesString)")
+        let images = toyImagesString.components(separatedBy: ",")
+        return images
+       
+       
+    }
+    
 }

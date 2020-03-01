@@ -15,13 +15,16 @@ class ApiClient {
     class func getAllToysCategories(handler:@escaping([Category]? , String?)->Void){
         let url = NetworkHelper.EndPoints.getAllToysCats.url
         NetworkHelper.taskForGetRequest(url: url, responseType: AllCats.self) { (categories, error) in
-            if let allCats = categories {
-                print (allCats.categories)
-                handler(allCats.categories , nil )
-            }else {
-                print ("Error in getting all categories : \(error?.localizedDescription ?? "Unknown error")")
-                handler(nil , "Error in getting the categories \(error?.localizedDescription ?? "Unknown error")")
-            }
+            
+                if let allCats = categories {
+                    print (allCats.categories)
+                    handler(allCats.categories , nil )
+                }else {
+                    print ("Error in getting all categories : \(error?.localizedDescription ?? "Unknown error")")
+                    handler(nil , "Error in getting the categories \(error?.localizedDescription ?? "Unknown error")")
+                }
+            
+            
         }
         
     }
@@ -37,12 +40,15 @@ class ApiClient {
     class func searchToy(categoryID:Int , minAge:Int , maxAge:Int , keyword:String , handler:@escaping([Toy]? , String? )->Void){
         let url = NetworkHelper.EndPoints.searchToy(categoryID, minAge, maxAge, keyword).url
         NetworkHelper.taskForGetRequest(url: url, responseType: AllToys.self) { (allToys, error) in
-            if let allToys = allToys {
-                handler(allToys.toys , nil )
-            }else {
-                print ("Error getting the toys : \(error?.localizedDescription ?? "Unknown error")")
-                handler(nil , "Error getting the toys : \(error?.localizedDescription ?? "Unknown error")")
+            DispatchQueue.main.async {
+                if let allToys = allToys {
+                    handler(allToys.toys , nil )
+                }else {
+                    print ("Error getting the toys : \(error?.localizedDescription ?? "Unknown error")")
+                    handler(nil , "Error getting the toys : \(error?.localizedDescription ?? "Unknown error")")
+                }
             }
+            
         }
     }
     

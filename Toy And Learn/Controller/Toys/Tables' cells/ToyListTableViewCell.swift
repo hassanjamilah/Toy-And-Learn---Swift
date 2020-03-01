@@ -10,6 +10,10 @@ import UIKit
 
 class ToyListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var toyPrice: UILabel!
+    @IBOutlet weak var toyAge: UILabel!
+    @IBOutlet weak var toyName: UILabel!
+    @IBOutlet weak var toyImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

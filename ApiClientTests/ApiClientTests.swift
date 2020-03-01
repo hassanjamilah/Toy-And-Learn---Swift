@@ -67,4 +67,9 @@ class ApiClientTests: XCTestCase {
         wait(for: [promise], timeout: 5)
     }
     
+    
+    func testGetImagesArray(){
+        let toy = Toy(toyMaxAge: 1, toyMinAge: 20, toyCategoryID: 1, toyDescription: "", toyServerID: 5, toyImagesString: "Animals301.jpg,Animals302.jpg,Animals303.jpg", toyName: "Hell", toyPrice: 10)
+        print(toy.getImagesArray())
+    }
 }

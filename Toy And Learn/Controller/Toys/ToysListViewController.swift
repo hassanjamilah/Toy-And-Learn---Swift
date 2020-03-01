@@ -10,21 +10,82 @@ import UIKit
 
 class ToysListViewController: UIViewController {
 
+    //MARK: Outlets
+    @IBOutlet weak var toySearchView: UISearchBar!
+    @IBOutlet weak var minAgeSlider: UISlider!
+    @IBOutlet weak var minAgeLabel: UILabel!
+    @IBOutlet weak var maxAgeSlider: UISlider!
+    @IBOutlet weak var maxAgeLabel: UILabel!
+    @IBOutlet weak var cartButton: UIBarButtonItem!
+    @IBOutlet weak var toysTableView: UITableView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
+    var categoyID:Int!
+    var allToys = [Toy]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        loadData()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func loadData(){
+        showIndicator(show: true)
+        ApiClient.searchToy(categoryID: categoyID, minAge: 1, maxAge: 20, keyword: "") { (toys, errorStr) in
+            if let toys = toys {
+                self.allToys = toys
+                self.toysTableView.reloadData()
+            }else {
+                UIHelper.showAlertDialog(message: .errorLodingToysList, title: .errorLodingToysList, sourceController: self)
+            }
+            self.showIndicator(show: false)
+        }
     }
-    */
 
+    func showIndicator (show:Bool){
+        if show {
+            loadingIndicator.startAnimating()
+            loadingIndicator.isHidden = false
+        }else {
+            loadingIndicator.stopAnimating()
+            loadingIndicator.isHidden = true
+        }
+    }
+
+}
+
+
+extension ToysListViewController:UITableViewDelegate , UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allToys.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         let cell = tableView.dequeueReusableCell(withIdentifier: "toyListCell") as! ToyListTableViewCell
+        let toy = allToys[indexPath.row]
+        cell.toyName.text  = toy.toyName
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let toy = allToys[indexPath.row]
+        performSegue(withIdentifier: "toToyDetails", sender: toy)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let controller = segue.destination as? ToyDetailsViewController else {
+            return
+        }
+        guard let toy = sender as? Toy else {
+            return
+        }
+        controller.toy = toy
+        
+        
+    }
+    
+    
 }
