@@ -25,6 +25,17 @@
 		CEC03A24240B5EFD008B25B7 /* StoryDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A23240B5EFD008B25B7 /* StoryDataUtils.swift */; };
 		CEC03A2C240B6224008B25B7 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A2B240B6224008B25B7 /* CoreDataTests.swift */; };
 		CEC03A3A240B85A3008B25B7 /* StoryCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A39240B85A3008B25B7 /* StoryCoreDataTests.swift */; };
+		CEC03A45240B9ED2008B25B7 /* ToysCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A44240B9ED2008B25B7 /* ToysCategoriesViewController.swift */; };
+		CEC03A47240B9EFC008B25B7 /* ToysListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A46240B9EFC008B25B7 /* ToysListViewController.swift */; };
+		CEC03A49240B9F1D008B25B7 /* ToyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A48240B9F1D008B25B7 /* ToyDetailsViewController.swift */; };
+		CEC03A4B240B9F56008B25B7 /* StoriesAgeRangesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A4A240B9F56008B25B7 /* StoriesAgeRangesViewController.swift */; };
+		CEC03A4D240B9F77008B25B7 /* StoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A4C240B9F77008B25B7 /* StoriesListViewController.swift */; };
+		CEC03A4F240B9F9B008B25B7 /* StoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A4E240B9F9B008B25B7 /* StoryDetailsViewController.swift */; };
+		CEC03A51240B9FC4008B25B7 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A50240B9FC4008B25B7 /* FavoritesTableViewController.swift */; };
+		CEC03A56240BA035008B25B7 /* ToyCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A55240BA035008B25B7 /* ToyCategoryTableViewCell.swift */; };
+		CEC03A58240BA042008B25B7 /* ToyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A57240BA042008B25B7 /* ToyListTableViewCell.swift */; };
+		CEC03A5A240BA057008B25B7 /* StoryCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A59240BA057008B25B7 /* StoryCategoryTableViewCell.swift */; };
+		CEC03A5C240BA069008B25B7 /* StoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A5B240BA069008B25B7 /* StoryListTableViewCell.swift */; };
 		CEF7D263240A8C2600D8C358 /* NetworkHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7D262240A8C2600D8C358 /* NetworkHelperTests.swift */; };
 		CEF7D26B240A8E9F00D8C358 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7D26A240A8E9F00D8C358 /* Category.swift */; };
 		CEF7D26D240A8EA800D8C358 /* Toy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7D26C240A8EA800D8C358 /* Toy.swift */; };
@@ -99,6 +110,17 @@
 		CEC03A37240B85A3008B25B7 /* StoryCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoryCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC03A39240B85A3008B25B7 /* StoryCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCoreDataTests.swift; sourceTree = "<group>"; };
 		CEC03A3B240B85A3008B25B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEC03A44240B9ED2008B25B7 /* ToysCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToysCategoriesViewController.swift; sourceTree = "<group>"; };
+		CEC03A46240B9EFC008B25B7 /* ToysListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToysListViewController.swift; sourceTree = "<group>"; };
+		CEC03A48240B9F1D008B25B7 /* ToyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyDetailsViewController.swift; sourceTree = "<group>"; };
+		CEC03A4A240B9F56008B25B7 /* StoriesAgeRangesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesAgeRangesViewController.swift; sourceTree = "<group>"; };
+		CEC03A4C240B9F77008B25B7 /* StoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesListViewController.swift; sourceTree = "<group>"; };
+		CEC03A4E240B9F9B008B25B7 /* StoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailsViewController.swift; sourceTree = "<group>"; };
+		CEC03A50240B9FC4008B25B7 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		CEC03A55240BA035008B25B7 /* ToyCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		CEC03A57240BA042008B25B7 /* ToyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyListTableViewCell.swift; sourceTree = "<group>"; };
+		CEC03A59240BA057008B25B7 /* StoryCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		CEC03A5B240BA069008B25B7 /* StoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListTableViewCell.swift; sourceTree = "<group>"; };
 		CEF7D260240A8C2600D8C358 /* NetworkHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF7D262240A8C2600D8C358 /* NetworkHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelperTests.swift; sourceTree = "<group>"; };
 		CEF7D264240A8C2600D8C358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -222,6 +244,9 @@
 		CE582151240A7D5300727B07 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CEC03A41240B9E96008B25B7 /* Toys */,
+				CEC03A42240B9EA0008B25B7 /* Stories */,
+				CEC03A43240B9EA7008B25B7 /* Favorites */,
 				CE6D523C24093CA000AB9C53 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -314,6 +339,54 @@
 				CEC03A3B240B85A3008B25B7 /* Info.plist */,
 			);
 			path = StoryCoreDataTests;
+			sourceTree = "<group>";
+		};
+		CEC03A41240B9E96008B25B7 /* Toys */ = {
+			isa = PBXGroup;
+			children = (
+				CEC03A52240B9FE0008B25B7 /* Tables' cells */,
+				CEC03A44240B9ED2008B25B7 /* ToysCategoriesViewController.swift */,
+				CEC03A46240B9EFC008B25B7 /* ToysListViewController.swift */,
+				CEC03A48240B9F1D008B25B7 /* ToyDetailsViewController.swift */,
+			);
+			path = Toys;
+			sourceTree = "<group>";
+		};
+		CEC03A42240B9EA0008B25B7 /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				CEC03A53240BA000008B25B7 /* Tables' cells */,
+				CEC03A4A240B9F56008B25B7 /* StoriesAgeRangesViewController.swift */,
+				CEC03A4C240B9F77008B25B7 /* StoriesListViewController.swift */,
+				CEC03A4E240B9F9B008B25B7 /* StoryDetailsViewController.swift */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		CEC03A43240B9EA7008B25B7 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				CEC03A50240B9FC4008B25B7 /* FavoritesTableViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		CEC03A52240B9FE0008B25B7 /* Tables' cells */ = {
+			isa = PBXGroup;
+			children = (
+				CEC03A55240BA035008B25B7 /* ToyCategoryTableViewCell.swift */,
+				CEC03A57240BA042008B25B7 /* ToyListTableViewCell.swift */,
+			);
+			path = "Tables' cells";
+			sourceTree = "<group>";
+		};
+		CEC03A53240BA000008B25B7 /* Tables' cells */ = {
+			isa = PBXGroup;
+			children = (
+				CEC03A59240BA057008B25B7 /* StoryCategoryTableViewCell.swift */,
+				CEC03A5B240BA069008B25B7 /* StoryListTableViewCell.swift */,
+			);
+			path = "Tables' cells";
 			sourceTree = "<group>";
 		};
 		CEF7D261240A8C2600D8C358 /* NetworkHelperTests */ = {
@@ -574,17 +647,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF7D26D240A8EA800D8C358 /* Toy.swift in Sources */,
+				CEC03A58240BA042008B25B7 /* ToyListTableViewCell.swift in Sources */,
 				CE6D523D24093CA000AB9C53 /* ViewController.swift in Sources */,
+				CEC03A56240BA035008B25B7 /* ToyCategoryTableViewCell.swift in Sources */,
+				CEC03A5A240BA057008B25B7 /* StoryCategoryTableViewCell.swift in Sources */,
 				CE6D524324093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld in Sources */,
 				CE582155240A7DD000727B07 /* NetworkHelper.swift in Sources */,
+				CEC03A4F240B9F9B008B25B7 /* StoryDetailsViewController.swift in Sources */,
+				CEC03A4B240B9F56008B25B7 /* StoriesAgeRangesViewController.swift in Sources */,
 				CE6D523924093CA000AB9C53 /* AppDelegate.swift in Sources */,
+				CEC03A4D240B9F77008B25B7 /* StoriesListViewController.swift in Sources */,
 				CEC03A1E240B5B1B008B25B7 /* DatabaseUtils.swift in Sources */,
 				CE6D523B24093CA000AB9C53 /* SceneDelegate.swift in Sources */,
+				CEC03A47240B9EFC008B25B7 /* ToysListViewController.swift in Sources */,
 				CE582157240A7DDB00727B07 /* ApiClient.swift in Sources */,
+				CEC03A5C240BA069008B25B7 /* StoryListTableViewCell.swift in Sources */,
 				CEF7D26B240A8E9F00D8C358 /* Category.swift in Sources */,
 				CEC03A24240B5EFD008B25B7 /* StoryDataUtils.swift in Sources */,
+				CEC03A45240B9ED2008B25B7 /* ToysCategoriesViewController.swift in Sources */,
+				CEC03A49240B9F1D008B25B7 /* ToyDetailsViewController.swift in Sources */,
 				CEF7D26F240A8EBD00D8C358 /* Story.swift in Sources */,
 				CEC03A20240B5E14008B25B7 /* MaterialDataUtils.swift in Sources */,
+				CEC03A51240B9FC4008B25B7 /* FavoritesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
