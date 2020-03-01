@@ -20,6 +20,11 @@
 		CE6D524824093CA300AB9C53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6D524624093CA300AB9C53 /* LaunchScreen.storyboard */; };
 		CEC03A08240B33DD008B25B7 /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A07240B33DD008B25B7 /* ApiClientTests.swift */; };
 		CEC03A16240B36B0008B25B7 /* CodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A15240B36B0008B25B7 /* CodableTests.swift */; };
+		CEC03A1E240B5B1B008B25B7 /* DatabaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A1D240B5B1B008B25B7 /* DatabaseUtils.swift */; };
+		CEC03A20240B5E14008B25B7 /* MaterialDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A1F240B5E14008B25B7 /* MaterialDataUtils.swift */; };
+		CEC03A22240B5E27008B25B7 /* CartDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A21240B5E27008B25B7 /* CartDataUtils.swift */; };
+		CEC03A24240B5EFD008B25B7 /* StoryDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A23240B5EFD008B25B7 /* StoryDataUtils.swift */; };
+		CEC03A2C240B6224008B25B7 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A2B240B6224008B25B7 /* CoreDataTests.swift */; };
 		CEF7D263240A8C2600D8C358 /* NetworkHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7D262240A8C2600D8C358 /* NetworkHelperTests.swift */; };
 		CEF7D26B240A8E9F00D8C358 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7D26A240A8E9F00D8C358 /* Category.swift */; };
 		CEF7D26D240A8EA800D8C358 /* Toy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7D26C240A8EA800D8C358 /* Toy.swift */; };
@@ -35,6 +40,13 @@
 			remoteInfo = "Toy And Learn";
 		};
 		CEC03A18240B36B0008B25B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE6D522D24093CA000AB9C53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE6D523424093CA000AB9C53;
+			remoteInfo = "Toy And Learn";
+		};
+		CEC03A2E240B6225008B25B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE6D522D24093CA000AB9C53 /* Project object */;
 			proxyType = 1;
@@ -71,6 +83,13 @@
 		CEC03A13240B36B0008B25B7 /* CodableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC03A15240B36B0008B25B7 /* CodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTests.swift; sourceTree = "<group>"; };
 		CEC03A17240B36B0008B25B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEC03A1D240B5B1B008B25B7 /* DatabaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUtils.swift; sourceTree = "<group>"; };
+		CEC03A1F240B5E14008B25B7 /* MaterialDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDataUtils.swift; sourceTree = "<group>"; };
+		CEC03A21240B5E27008B25B7 /* CartDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDataUtils.swift; sourceTree = "<group>"; };
+		CEC03A23240B5EFD008B25B7 /* StoryDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDataUtils.swift; sourceTree = "<group>"; };
+		CEC03A29240B6224008B25B7 /* CoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC03A2B240B6224008B25B7 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
+		CEC03A2D240B6225008B25B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEF7D260240A8C2600D8C358 /* NetworkHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF7D262240A8C2600D8C358 /* NetworkHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelperTests.swift; sourceTree = "<group>"; };
 		CEF7D264240A8C2600D8C358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +116,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CEC03A10240B36B0008B25B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC03A26240B6224008B25B7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -142,6 +168,11 @@
 		CE58214D240A7D3600727B07 /* DatabaseUtils */ = {
 			isa = PBXGroup;
 			children = (
+				CE6D524124093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld */,
+				CEC03A1D240B5B1B008B25B7 /* DatabaseUtils.swift */,
+				CEC03A1F240B5E14008B25B7 /* MaterialDataUtils.swift */,
+				CEC03A21240B5E27008B25B7 /* CartDataUtils.swift */,
+				CEC03A23240B5EFD008B25B7 /* StoryDataUtils.swift */,
 			);
 			path = DatabaseUtils;
 			sourceTree = "<group>";
@@ -198,6 +229,7 @@
 				CEF7D261240A8C2600D8C358 /* NetworkHelperTests */,
 				CEC03A06240B33DD008B25B7 /* ApiClientTests */,
 				CEC03A14240B36B0008B25B7 /* CodableTests */,
+				CEC03A2A240B6224008B25B7 /* CoreDataTests */,
 				CE6D523624093CA000AB9C53 /* Products */,
 				B6F22C4FFEA78D790966333C /* Pods */,
 				89F0E893B843FE2EF547DC4C /* Frameworks */,
@@ -211,6 +243,7 @@
 				CEF7D260240A8C2600D8C358 /* NetworkHelperTests.xctest */,
 				CEC03A05240B33DD008B25B7 /* ApiClientTests.xctest */,
 				CEC03A13240B36B0008B25B7 /* CodableTests.xctest */,
+				CEC03A29240B6224008B25B7 /* CoreDataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,7 +259,6 @@
 				CE58214E240A7D3D00727B07 /* UIUtils */,
 				CE58214D240A7D3600727B07 /* DatabaseUtils */,
 				CE6D524924093CA300AB9C53 /* Info.plist */,
-				CE6D524124093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld */,
 			);
 			path = "Toy And Learn";
 			sourceTree = "<group>";
@@ -247,6 +279,15 @@
 				CEC03A17240B36B0008B25B7 /* Info.plist */,
 			);
 			path = CodableTests;
+			sourceTree = "<group>";
+		};
+		CEC03A2A240B6224008B25B7 /* CoreDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEC03A2B240B6224008B25B7 /* CoreDataTests.swift */,
+				CEC03A2D240B6225008B25B7 /* Info.plist */,
+			);
+			path = CoreDataTests;
 			sourceTree = "<group>";
 		};
 		CEF7D261240A8C2600D8C358 /* NetworkHelperTests */ = {
@@ -315,6 +356,24 @@
 			productReference = CEC03A13240B36B0008B25B7 /* CodableTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CEC03A28240B6224008B25B7 /* CoreDataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEC03A30240B6225008B25B7 /* Build configuration list for PBXNativeTarget "CoreDataTests" */;
+			buildPhases = (
+				CEC03A25240B6224008B25B7 /* Sources */,
+				CEC03A26240B6224008B25B7 /* Frameworks */,
+				CEC03A27240B6224008B25B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEC03A2F240B6225008B25B7 /* PBXTargetDependency */,
+			);
+			name = CoreDataTests;
+			productName = CoreDataTests;
+			productReference = CEC03A29240B6224008B25B7 /* CoreDataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CEF7D25F240A8C2600D8C358 /* NetworkHelperTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEF7D269240A8C2600D8C358 /* Build configuration list for PBXNativeTarget "NetworkHelperTests" */;
@@ -354,6 +413,10 @@
 						CreatedOnToolsVersion = 11.3;
 						TestTargetID = CE6D523424093CA000AB9C53;
 					};
+					CEC03A28240B6224008B25B7 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = CE6D523424093CA000AB9C53;
+					};
 					CEF7D25F240A8C2600D8C358 = {
 						CreatedOnToolsVersion = 11.3;
 						TestTargetID = CE6D523424093CA000AB9C53;
@@ -377,6 +440,7 @@
 				CEF7D25F240A8C2600D8C358 /* NetworkHelperTests */,
 				CEC03A04240B33DD008B25B7 /* ApiClientTests */,
 				CEC03A12240B36B0008B25B7 /* CodableTests */,
+				CEC03A28240B6224008B25B7 /* CoreDataTests */,
 			);
 		};
 /* End PBXProject section */
@@ -401,6 +465,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CEC03A11240B36B0008B25B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC03A27240B6224008B25B7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -451,10 +522,14 @@
 				CE6D524324093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld in Sources */,
 				CE582155240A7DD000727B07 /* NetworkHelper.swift in Sources */,
 				CE6D523924093CA000AB9C53 /* AppDelegate.swift in Sources */,
+				CEC03A1E240B5B1B008B25B7 /* DatabaseUtils.swift in Sources */,
 				CE6D523B24093CA000AB9C53 /* SceneDelegate.swift in Sources */,
 				CE582157240A7DDB00727B07 /* ApiClient.swift in Sources */,
+				CEC03A22240B5E27008B25B7 /* CartDataUtils.swift in Sources */,
 				CEF7D26B240A8E9F00D8C358 /* Category.swift in Sources */,
+				CEC03A24240B5EFD008B25B7 /* StoryDataUtils.swift in Sources */,
 				CEF7D26F240A8EBD00D8C358 /* Story.swift in Sources */,
+				CEC03A20240B5E14008B25B7 /* MaterialDataUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +546,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC03A16240B36B0008B25B7 /* CodableTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC03A25240B6224008B25B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEC03A2C240B6224008B25B7 /* CoreDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +577,11 @@
 			isa = PBXTargetDependency;
 			target = CE6D523424093CA000AB9C53 /* Toy And Learn */;
 			targetProxy = CEC03A18240B36B0008B25B7 /* PBXContainerItemProxy */;
+		};
+		CEC03A2F240B6225008B25B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE6D523424093CA000AB9C53 /* Toy And Learn */;
+			targetProxy = CEC03A2E240B6225008B25B7 /* PBXContainerItemProxy */;
 		};
 		CEF7D266240A8C2600D8C358 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -748,6 +836,44 @@
 			};
 			name = Release;
 		};
+		CEC03A31240B6225008B25B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CoreDataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andalus.CoreDataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toy And Learn.app/Toy And Learn";
+			};
+			name = Debug;
+		};
+		CEC03A32240B6225008B25B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CoreDataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andalus.CoreDataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toy And Learn.app/Toy And Learn";
+			};
+			name = Release;
+		};
 		CEF7D267240A8C2600D8C358 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -821,6 +947,15 @@
 			buildConfigurations = (
 				CEC03A1B240B36B0008B25B7 /* Debug */,
 				CEC03A1C240B36B0008B25B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEC03A30240B6225008B25B7 /* Build configuration list for PBXNativeTarget "CoreDataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEC03A31240B6225008B25B7 /* Debug */,
+				CEC03A32240B6225008B25B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
