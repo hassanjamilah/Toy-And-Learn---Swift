@@ -28,11 +28,20 @@ class ToyDetailsViewController: UIViewController {
     var toy:Toy!
     var allImages:[String]!
     var currentImageIndex:Int = 0
+    var toyIsFav  = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadToy()
+        
+        let material = MaterialDataUtils.setMaterialFromToy(toy: toy)
+        let isFav  = MaterialDataUtils.checkIfMaterialIsFavorite(material: material)
+        if isFav {
+             toyFavoriteButton.setImage(UIImage(named: UIHelper.iconsNames.fav_filled.rawValue), for: .normal)
+            toyIsFav =  true
+        }
        
+        
     }
     
     func loadToy(){
@@ -47,6 +56,7 @@ class ToyDetailsViewController: UIViewController {
     
     func loadImage(){
         showImageLoadingIndicator(show: true)
+        
         allImages = toy.getImagesArray()
         let url = NetworkHelper.getImageURL(imageName: allImages[currentImageIndex])
         NetworkHelper.loadImageFromURL(url: url) { (image, error) in
@@ -85,7 +95,18 @@ class ToyDetailsViewController: UIViewController {
     }
     
     @IBAction func addToFavAction(_ sender: Any) {
-        MaterialDataUtils.addMaterialToFavoritesAndCart(toy: toy, isFavorit: true, isCart: false, quantity: nil )
+        
+        if toyIsFav{
+            
+            MaterialDataUtils.addMaterialToFavoritesAndCart(toy: toy, isFavorit: false, isCart: false, quantity: nil )
+            toyFavoriteButton.setImage(UIImage(named: UIHelper.iconsNames.fav_empty.rawValue), for: .normal)
+            toyIsFav = false
+        }else {
+            MaterialDataUtils.addMaterialToFavoritesAndCart(toy: toy, isFavorit: true, isCart: false, quantity: nil )
+            toyFavoriteButton.setImage(UIImage(named: UIHelper.iconsNames.fav_filled.rawValue), for: .normal)
+            toyIsFav = true
+        }
+        
     }
     
     func showQuanittyAlert(){

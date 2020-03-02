@@ -50,17 +50,17 @@ class ToysCategoriesViewController: UIViewController   {
     
     
     @IBAction func maxAgeChangedAction(_ sender: Any) {
-        maxAgeLabel.text = "\(getSliderIntValue(slider: maxAgeSlider))"
+        maxAgeLabel.text = "\(ToysCategoriesViewController.getSliderIntValue(slider: maxAgeSlider))"
     }
     @IBAction func minAgeChangedAction(_ sender: Any) {
-        minAgeLabel.text = "\(getSliderIntValue(slider: minAgeSlider))"
+        minAgeLabel.text = "\(ToysCategoriesViewController.getSliderIntValue(slider: minAgeSlider))"
     }
     
     
     /**
      Returns the int value of a slider
      */
-    func getSliderIntValue (slider:UISlider)->Int{
+    class func getSliderIntValue (slider:UISlider)->Int{
         return Int(slider.value)
     }
     
@@ -84,30 +84,28 @@ extension ToysCategoriesViewController:UITableViewDelegate , UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+         let cell = tableView.dequeueReusableCell(withIdentifier: "catToyCell") as! ToyListTableViewCell
+        cell.toyImage.image = nil
+        cell.showIndicator()
         if isSearching {
             print("Loading Items from search")
-            let cell = tableView.dequeueReusableCell(withIdentifier: "catToyCell") as! ToyListTableViewCell
+           
             let toy = allToys[indexPath.row]
             cell.toyName.text = toy.toyName
             cell.toyAge.text = "\(toy.toyMinAge) - \(toy.toyMaxAge) Years"
             cell.toyPrice.text = "\(toy.toyPrice)$"
+            let imageName = toy.getImagesArray()[0]
+            cell.loadImage(imageName: imageName)
             
             return cell
         }else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell")!
-            
+           
             
             let category = categories[indexPath.row]
-            cell.textLabel?.text = category.categoryName
-            cell.detailTextLabel?.text = "\(category.categoryID)"
-            let url = NetworkHelper.getImageURL(imageName: category.categoryImageName)
-            NetworkHelper.loadImageFromURL(url: url) { (image, error) in
-                if let image = image {
-                    cell.imageView?.image = image
-                }
-            }
-            cell.imageView?.contentMode = .scaleToFill
+            cell.toyAge.text = category.categoryName
+            
+            
+            cell.loadImage(imageName: category.categoryImageName)
             return cell
         }
         
@@ -116,22 +114,31 @@ extension ToysCategoriesViewController:UITableViewDelegate , UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if isSearching{
+            performSegue(withIdentifier: "fromCatToToyDetails", sender: indexPath.row)
+        }else {
         performSegue(withIdentifier: "toToyList", sender: categories[indexPath.row].categoryID)
         UserDefaults.standard.set(indexPath.row, forKey: UserDefaultsKeys.AllKeys.selectedCategory.rawValue)
-        
+        }
         
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let controller = segue.destination as? ToysListViewController else {
-            return
+        
+        if let controller = segue.destination as? ToysListViewController  {
+            guard let catId = sender as? Int else {
+                       return
+                   }
+                   controller.categoyID = catId
+        }else if let controller = segue.destination as? ToyDetailsViewController{
+            guard let row = sender as? Int else {
+                return
+            }
+            let toy = allToys[row]
+            controller.toy = toy
         }
-        guard let catId = sender as? Int else {
-            return
-        }
-        controller.categoyID = catId
+       
         
     }
 }
@@ -157,8 +164,9 @@ extension ToysCategoriesViewController:UISearchBarDelegate{
     }
     
     
-    func doSearch(word:String){
-        ApiClient.searchToy(categoryID: 0, minAge: getSliderIntValue(slider: minAgeSlider), maxAge: getSliderIntValue(slider: maxAgeSlider), keyword: word) { (toys, errStr) in
+    func doSearch(word:String ){
+        allToys = [Toy]()
+        ApiClient.searchToy(categoryID: 0, minAge: ToysCategoriesViewController.getSliderIntValue(slider: minAgeSlider), maxAge: ToysCategoriesViewController.getSliderIntValue(slider: maxAgeSlider), keyword: word) { (toys, errStr) in
             if let toys = toys {
                 self.allToys = toys
             }

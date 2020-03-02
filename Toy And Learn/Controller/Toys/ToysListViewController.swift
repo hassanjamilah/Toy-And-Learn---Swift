@@ -47,7 +47,15 @@ class ToysListViewController: UIViewController {
     
     
 
-
+    @IBAction func minAgeSliderAction(_ sender: Any) {
+        minAgeLabel.text = "\(ToysCategoriesViewController.getSliderIntValue(slider: minAgeSlider))"
+    }
+    
+    @IBAction func maxAgeSliderAction(_ sender: Any) {
+        maxAgeLabel.text = "\(ToysCategoriesViewController.getSliderIntValue(slider: maxAgeSlider))"
+    }
+    
+    
 }
 
 
@@ -64,6 +72,10 @@ extension ToysListViewController:UITableViewDelegate , UITableViewDataSource{
          let cell = tableView.dequeueReusableCell(withIdentifier: "toyListCell") as! ToyListTableViewCell
         let toy = allToys[indexPath.row]
         cell.toyName.text  = toy.toyName
+        cell.toyAge.text = "\(toy.toyMinAge) - \(toy.toyMaxAge) Years"
+        cell.toyPrice.text = "\(toy.toyPrice)$"
+        let imageName = toy.getImagesArray()[0]
+        cell.loadImage(imageName: imageName)
         return cell
     }
     
@@ -86,3 +98,36 @@ extension ToysListViewController:UITableViewDelegate , UITableViewDataSource{
     
     
 }
+
+
+//MARK: Search View Delegate
+extension ToysListViewController:UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        if let searchText = searchBar.text{
+            
+            doSearch(word: searchText)
+            toySearchView.resignFirstResponder()
+        }
+        
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+        toySearchView.resignFirstResponder()
+        loadData()
+    }
+    
+    
+    func doSearch(word:String ){
+        allToys = [Toy]()
+        ApiClient.searchToy(categoryID: 0, minAge: ToysCategoriesViewController.getSliderIntValue(slider: minAgeSlider), maxAge: ToysCategoriesViewController.getSliderIntValue(slider: maxAgeSlider), keyword: word) { (toys, errStr) in
+            if let toys = toys {
+                self.allToys = toys
+            }
+            self.toysTableView.reloadData()
+        }
+    }
+}
+

@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 class UIHelper {
+    enum iconsNames:String{
+        case fav_empty = "fav_empty"
+        case fav_filled = "fav_filled"
+    }
+    
     enum MessagesContents :String {
         case errorLaodingCats = "Can not load the categories"
         case errorLodingToysList = "Can not load the toys list"
