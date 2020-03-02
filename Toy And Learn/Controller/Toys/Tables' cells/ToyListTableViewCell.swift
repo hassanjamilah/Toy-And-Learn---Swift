@@ -21,21 +21,19 @@ class ToyListTableViewCell: UITableViewCell {
         if let toyImage =   toyImage{
             loadingIndicator.frame = toyImage.frame
         }
-        
         toyImage.addSubview(loadingIndicator)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    
+    /**
+     Show the loading indicatore
+     */
     func showIndicator(){
         UIHelper.showIndicator(loadingIndicator: loadingIndicator, show: true)
     }
     
+    /**
+     Load the image in the image view from the server 
+     */
     func loadImage(imageName:String){
         UIHelper.showIndicator(loadingIndicator: loadingIndicator, show: true)
         let url = NetworkHelper.getImageURL(imageName: imageName)

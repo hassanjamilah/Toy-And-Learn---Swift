@@ -2,7 +2,7 @@
 //  NetworkHelper.swift
 //  Toy And Learn
 //
-//  Created by user on 29/02/2020.
+//  Created by Hassan on 29/02/2020.
 //  Copyright © 2020 Andalus. All rights reserved.
 //
 
@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 class NetworkHelper {
     
+    /**
+     The used endpoints
+     */
     enum EndPoints {
         static let base_url = "https://toyandlearn.000webhostapp.com/"
         static let images_base_url = EndPoints.base_url + "images/"
@@ -30,14 +33,9 @@ class NetworkHelper {
            
             }
         }
-        
-        
-        
         var url:URL {
             return URL(string: urlString)!
         }
-        
-        
     }
     
     /**
@@ -75,6 +73,9 @@ class NetworkHelper {
         }
     }
     
+    /**
+     Used to download the image from the server
+     */
     class func loadImageFromURL(url:URL , handler:@escaping(UIImage? , Error?)->Void){
         let q = DispatchQueue.global()
         q.async {
@@ -97,7 +98,10 @@ class NetworkHelper {
        
     }
     
-    
+    /**
+     Used to get the image url from the image name
+        imageName : The name of the image you want to get the url for 
+     */
     class func getImageURL(imageName:String)->URL{
         var  urlStr = EndPoints.images_base_url + "\(imageName)"
         print ("The url str is : \(urlStr)")

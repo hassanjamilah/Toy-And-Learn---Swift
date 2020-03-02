@@ -11,7 +11,7 @@ import WebKit
 class StoryDetailsViewController: UIViewController  {
     //MARK: Outlets
     
-  
+    
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var storyWebView: WKWebView!
@@ -26,30 +26,26 @@ class StoryDetailsViewController: UIViewController  {
             isFav = StoryDataUtils.checkIfStoryIsInFavorite(storyServerID: Int64(story.storyServerID))
             if isFav {
                 setFavButtonIcon(isFavIcon: true)
-               
+                
             }else {
-               setFavButtonIcon(isFavIcon: false)
+                setFavButtonIcon(isFavIcon: false)
             }
-            
         }
-        
         storyWebView.uiDelegate = self
-        
-        
         
         loadPage()
     }
     
     func setFavButtonIcon (isFavIcon:Bool){
-           if let favoriteButton = favoriteButton {
-        if isFavIcon {
-            favoriteButton.image = UIImage(systemName: "star.fill")
-        }else {
-             favoriteButton.image = UIImage(systemName: "star")
+        if let favoriteButton = favoriteButton {
+            if isFavIcon {
+                favoriteButton.image = UIImage(systemName: "star.fill")
+            }else {
+                favoriteButton.image = UIImage(systemName: "star")
+            }
+            
+            
         }
-     
-                         
-                       }
     }
     
     func loadPage(){
@@ -68,15 +64,15 @@ class StoryDetailsViewController: UIViewController  {
     
     @IBAction func addToFavAction(_ sender: Any) {
         if isFav {
-             StoryDataUtils.addStoryToFavorite(story: story, isFavorite: false)
+            StoryDataUtils.addStoryToFavorite(story: story, isFavorite: false)
             isFav = false
             setFavButtonIcon(isFavIcon: false)
         }else {
-             StoryDataUtils.addStoryToFavorite(story: story, isFavorite: true)
+            StoryDataUtils.addStoryToFavorite(story: story, isFavorite: true)
             isFav = true
             setFavButtonIcon(isFavIcon: true)
         }
-       
+        
     }
     
     @IBAction func shareAction(_ sender: Any) {

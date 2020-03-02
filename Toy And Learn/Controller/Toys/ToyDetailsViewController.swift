@@ -29,32 +29,33 @@ class ToyDetailsViewController: UIViewController {
     var allImages:[String]!
     var currentImageIndex:Int = 0
     var toyIsFav  = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadToy()
-        
-        
         let isFav  = MaterialDataUtils.checkIfMaterialIsFavorite(serverID: toy.toyServerID)
         if isFav {
-             toyFavoriteButton.setImage(UIImage(named: UIHelper.iconsNames.fav_filled.rawValue), for: .normal)
+            toyFavoriteButton.setImage(UIImage(named: UIHelper.iconsNames.fav_filled.rawValue), for: .normal)
             toyIsFav =  true
         }
-       
-        let mats = MaterialDataUtils.getFavoriteMaterials()
-        print ( )
     }
     
+    /**
+     Set the data of the toy to the UI
+     */
     func loadToy(){
         loadImage()
-       setImageNumLabelText()
+        setImageNumLabelText()
         toyNameLabel.text = toy.toyName
         toyAgeLabel.text = "\(toy.toyMinAge) - \(toy.toyMaxAge) Years"
         toyPriceLabel.text = "\(toy.toyPrice)$"
         toyDescriptionTextView.text = toy.toyDescription
-       
+        
     }
     
+    /**
+     Load the image of the toy
+     */
     func loadImage(){
         showImageLoadingIndicator(show: true)
         
@@ -69,21 +70,17 @@ class ToyDetailsViewController: UIViewController {
         }
     }
     
+    // MARK: IBActions
     @IBAction func nextImageAction(_ sender: Any) {
         currentImageIndex += 1
         if currentImageIndex >= allImages.count{
             currentImageIndex = 0
         }
         loadImage()
-        
     }
-    
     @IBAction func addToCartAction(_ sender: Any) {
         showQuanittyAlert()
-    
     }
-    
-    
     @IBAction func previousImageAction(_ sender: Any) {
         currentImageIndex -= 1
         if currentImageIndex < 0 {
@@ -96,9 +93,7 @@ class ToyDetailsViewController: UIViewController {
     }
     
     @IBAction func addToFavAction(_ sender: Any) {
-        
         if toyIsFav{
-            
             MaterialDataUtils.addMaterialToFavoritesAndCart(toy: toy, isFavorit: false, isCart: false, quantity: nil )
             toyFavoriteButton.setImage(UIImage(named: UIHelper.iconsNames.fav_empty.rawValue), for: .normal)
             toyIsFav = false
@@ -110,34 +105,37 @@ class ToyDetailsViewController: UIViewController {
         
     }
     
+    /**
+     Show the alert to enter the quantity you want
+     */
     func showQuanittyAlert(){
+        let alert = UIAlertController(title: "Quantity", message: "Enter a quantity:", preferredStyle: .alert)
         
-            let alert = UIAlertController(title: "Quantity", message: "Enter a quantity:", preferredStyle: .alert)
-
-            // Create actions
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            let saveAction = UIAlertAction(title: "OK", style: .default) { [weak self] action in
-                if let quan = alert.textFields?.first?.text {
-                    self?.addToCart(quant: quan)
+        // Create actions
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let saveAction = UIAlertAction(title: "OK", style: .default) { [weak self] action in
+            if let quan = alert.textFields?.first?.text {
+                self?.addToCart(quant: quan)
+            }
+        }
+        saveAction.isEnabled = false
+        
+        // Add a text field
+        alert.addTextField { textField in
+            textField.placeholder = "Quantity"
+            textField.keyboardType = .numberPad
+            NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: textField, queue: .main) { notif in
+                if let text = textField.text, !text.isEmpty {
+                    saveAction.isEnabled = true
+                } else {
+                    saveAction.isEnabled = false
                 }
             }
-            saveAction.isEnabled = false
-
-            // Add a text field
-            alert.addTextField { textField in
-                textField.placeholder = "Quantity"
-                NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: textField, queue: .main) { notif in
-                    if let text = textField.text, !text.isEmpty {
-                        saveAction.isEnabled = true
-                    } else {
-                        saveAction.isEnabled = false
-                    }
-                }
-            }
-
-            alert.addAction(cancelAction)
-            alert.addAction(saveAction)
-            present(alert, animated: true, completion: nil)
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(saveAction)
+        present(alert, animated: true, completion: nil)
         
     }
     
@@ -154,14 +152,12 @@ class ToyDetailsViewController: UIViewController {
         }else {
             imageLoadingIndicatore.stopAnimating()
             imageLoadingIndicatore.isHidden = true
-            
-            
         }
     }
     
-
+    
     func setImageNumLabelText (){
-         toyNumImagesLabel.text = "\(currentImageIndex+1) \\ \(allImages.count)"
+        toyNumImagesLabel.text = "\(currentImageIndex+1) \\ \(allImages.count)"
     }
-
+    
 }

@@ -10,32 +10,27 @@ import UIKit
 
 class StoriesAgeRangesViewController: UIViewController {
     //MARK: Outlets
-    @IBOutlet weak var storySearchView: UISearchBar!
+   
     @IBOutlet weak var agesTableView: UITableView!
-    
     
     let minAges = [1 , 3 , 5]
     let maxAges = [3 , 5 , 12]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadAges()
     }
-    
     
     func loadAges(){
         if let lastSelectedRos = UserDefaults.standard.value(forKey: UserDefaultsKeys.AllKeys.selectedStoryAge.rawValue) as? Int {
             agesTableView.selectRow(at: IndexPath(row: lastSelectedRos, section: 0), animated: true, scrollPosition: .middle)
             
-            
         }
     }
     
-    
-    
 }
 
+//MARK: Table View Delegate
 extension StoriesAgeRangesViewController:UITableViewDelegate , UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

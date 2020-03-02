@@ -24,9 +24,6 @@ class ApiClient {
                     handler(nil , "Error in getting the categories \(error?.localizedDescription ?? "Unknown error")")
                 }
             }
-                
-            
-            
         }
         
     }

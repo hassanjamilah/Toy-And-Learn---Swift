@@ -26,20 +26,22 @@ class ToysCategoriesViewController: UIViewController   {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-       
-        
     }
     
-    
+    /**
+     Set the last selected category from the user defaults
+     */
     fileprivate func setLastSelectedCategory() {
         if let lastSelectedRos = UserDefaults.standard.value(forKey: UserDefaultsKeys.AllKeys.selectedCategory.rawValue) as? Int {
             if lastSelectedRos < categories.count{
-                 self.categoriesTableView.selectRow(at: IndexPath(row: lastSelectedRos as! Int, section: 0), animated: true, scrollPosition: .middle)
+                self.categoriesTableView.selectRow(at: IndexPath(row: lastSelectedRos as! Int, section: 0), animated: true, scrollPosition: .middle)
             }
-           
         }
     }
     
+    /**
+     load the categories from the server
+     */
     func loadData(){
         UIHelper.showIndicator(loadingIndicator: loadingIndicator, show: true)
         ApiClient.getAllToysCategories { (allCats, errorStr) in
@@ -57,9 +59,7 @@ class ToysCategoriesViewController: UIViewController   {
         }
     }
     
-    
-    
-    
+    //MARK: IBActions
     @IBAction func maxAgeChangedAction(_ sender: Any) {
         maxAgeLabel.text = "\(ToysCategoriesViewController.getSliderIntValue(slider: maxAgeSlider))"
     }
@@ -77,12 +77,11 @@ class ToysCategoriesViewController: UIViewController   {
     
 }
 
+//MARK: Table View Delegate
 extension ToysCategoriesViewController:UITableViewDelegate , UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 1
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,12 +94,12 @@ extension ToysCategoriesViewController:UITableViewDelegate , UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: "catToyCell") as! ToyListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "catToyCell") as! ToyListTableViewCell
         cell.toyImage.image = nil
         cell.showIndicator()
         if isSearching {
             print("Loading Items from search")
-           
+            
             let toy = allToys[indexPath.row]
             cell.toyName.text = toy.toyName
             cell.toyAge.text = "\(toy.toyMinAge) - \(toy.toyMaxAge) Years"
@@ -110,7 +109,7 @@ extension ToysCategoriesViewController:UITableViewDelegate , UITableViewDataSour
             cell.setupForCatToySearch(isFromCat: false)
             return cell
         }else {
-           
+            
             
             let category = categories[indexPath.row]
             cell.toyAge.text = category.categoryName
@@ -128,8 +127,8 @@ extension ToysCategoriesViewController:UITableViewDelegate , UITableViewDataSour
         if isSearching{
             performSegue(withIdentifier: "fromCatToToyDetails", sender: indexPath.row)
         }else {
-        performSegue(withIdentifier: "toToyList", sender: categories[indexPath.row].categoryID)
-        UserDefaults.standard.set(indexPath.row, forKey: UserDefaultsKeys.AllKeys.selectedCategory.rawValue)
+            performSegue(withIdentifier: "toToyList", sender: categories[indexPath.row].categoryID)
+            UserDefaults.standard.set(indexPath.row, forKey: UserDefaultsKeys.AllKeys.selectedCategory.rawValue)
         }
         
     }
@@ -139,9 +138,9 @@ extension ToysCategoriesViewController:UITableViewDelegate , UITableViewDataSour
         
         if let controller = segue.destination as? ToysListViewController  {
             guard let catId = sender as? Int else {
-                       return
-                   }
-                   controller.categoyID = catId
+                return
+            }
+            controller.categoyID = catId
         }else if let controller = segue.destination as? ToyDetailsViewController{
             guard let row = sender as? Int else {
                 return
@@ -149,7 +148,7 @@ extension ToysCategoriesViewController:UITableViewDelegate , UITableViewDataSour
             let toy = allToys[row]
             controller.toy = toy
         }
-       
+        
         
     }
 }

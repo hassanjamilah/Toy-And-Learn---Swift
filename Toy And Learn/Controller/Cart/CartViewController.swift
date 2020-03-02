@@ -2,7 +2,7 @@
 //  CartViewController.swift
 //  Toy And Learn
 //
-//  Created by user on 02/03/2020.
+//  Created by Hassan on 02/03/2020.
 //  Copyright © 2020 Andalus. All rights reserved.
 //
 
@@ -27,6 +27,7 @@ class CartViewController: UIViewController {
         loadCart()
     }
     
+    //MARK: Helper Methods
     func loadCart(){
         if let toys = MaterialDataUtils.getCartMaterials(){
             allToys = toys
@@ -45,6 +46,8 @@ class CartViewController: UIViewController {
 
 }
 
+
+//MARK: Table View Delegate
 extension CartViewController:UITableViewDelegate , UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

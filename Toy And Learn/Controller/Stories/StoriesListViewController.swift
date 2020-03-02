@@ -20,8 +20,7 @@ class StoriesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadStoriesList()
-        
-    }
+      }
    
     func loadStoriesList(){
         UIHelper.showIndicator(loadingIndicator: loadingIndicator, show: true)
@@ -35,12 +34,9 @@ class StoriesListViewController: UIViewController {
             UIHelper.showIndicator(loadingIndicator: self.loadingIndicator, show: false)
         }
     }
-
-   
-
 }
 
-
+//MARK: Table View Delegate
 extension StoriesListViewController:UITableViewDelegate , UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
