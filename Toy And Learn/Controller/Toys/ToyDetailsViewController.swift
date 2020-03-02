@@ -67,6 +67,12 @@ class ToyDetailsViewController: UIViewController {
         
     }
     
+    @IBAction func addToCartAction(_ sender: Any) {
+        showQuanittyAlert()
+    
+    }
+    
+    
     @IBAction func previousImageAction(_ sender: Any) {
         currentImageIndex -= 1
         if currentImageIndex < 0 {
@@ -80,6 +86,42 @@ class ToyDetailsViewController: UIViewController {
     
     @IBAction func addToFavAction(_ sender: Any) {
         MaterialDataUtils.addMaterialToFavoritesAndCart(toy: toy, isFavorit: true, isCart: false, quantity: nil )
+    }
+    
+    func showQuanittyAlert(){
+        
+            let alert = UIAlertController(title: "Quantity", message: "Enter a quantity:", preferredStyle: .alert)
+
+            // Create actions
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let saveAction = UIAlertAction(title: "OK", style: .default) { [weak self] action in
+                if let quan = alert.textFields?.first?.text {
+                    self?.addToCart(quant: quan)
+                }
+            }
+            saveAction.isEnabled = false
+
+            // Add a text field
+            alert.addTextField { textField in
+                textField.placeholder = "Quantity"
+                NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: textField, queue: .main) { notif in
+                    if let text = textField.text, !text.isEmpty {
+                        saveAction.isEnabled = true
+                    } else {
+                        saveAction.isEnabled = false
+                    }
+                }
+            }
+
+            alert.addAction(cancelAction)
+            alert.addAction(saveAction)
+            present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func addToCart(quant:String){
+        let quan = Int64(quant)
+        MaterialDataUtils.addMaterialToFavoritesAndCart(toy: toy, isFavorit: false, isCart: true, quantity: quan)
     }
     
     func showImageLoadingIndicator(show:Bool){

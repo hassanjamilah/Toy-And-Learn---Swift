@@ -18,6 +18,8 @@
 		CE6D524524093CA300AB9C53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6D524424093CA300AB9C53 /* Assets.xcassets */; };
 		CE6D524824093CA300AB9C53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6D524624093CA300AB9C53 /* LaunchScreen.storyboard */; };
 		CE9F9449240BA85400F8934E /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F9448240BA85400F8934E /* UIHelper.swift */; };
+		CE9F9470240CA7FF00F8934E /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F946F240CA7FF00F8934E /* CartTableViewCell.swift */; };
+		CE9F9472240CA81500F8934E /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F9471240CA81500F8934E /* CartViewController.swift */; };
 		CEC03A08240B33DD008B25B7 /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A07240B33DD008B25B7 /* ApiClientTests.swift */; };
 		CEC03A16240B36B0008B25B7 /* CodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A15240B36B0008B25B7 /* CodableTests.swift */; };
 		CEC03A1E240B5B1B008B25B7 /* DatabaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A1D240B5B1B008B25B7 /* DatabaseUtils.swift */; };
@@ -92,6 +94,8 @@
 		CE6D524724093CA300AB9C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE6D524924093CA300AB9C53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE9F9448240BA85400F8934E /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		CE9F946F240CA7FF00F8934E /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		CE9F9471240CA81500F8934E /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		CEC03A05240B33DD008B25B7 /* ApiClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApiClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC03A07240B33DD008B25B7 /* ApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientTests.swift; sourceTree = "<group>"; };
 		CEC03A09240B33DD008B25B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 		CE582151240A7D5300727B07 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CE9F946D240CA7E500F8934E /* Cart */,
 				CEC03A41240B9E96008B25B7 /* Toys */,
 				CEC03A42240B9EA0008B25B7 /* Stories */,
 				CEC03A43240B9EA7008B25B7 /* Favorites */,
@@ -297,6 +302,23 @@
 				CE6D524924093CA300AB9C53 /* Info.plist */,
 			);
 			path = "Toy And Learn";
+			sourceTree = "<group>";
+		};
+		CE9F946D240CA7E500F8934E /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				CE9F946E240CA7EE00F8934E /* CartTableViewCell */,
+				CE9F9471240CA81500F8934E /* CartViewController.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		CE9F946E240CA7EE00F8934E /* CartTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CE9F946F240CA7FF00F8934E /* CartTableViewCell.swift */,
+			);
+			path = CartTableViewCell;
 			sourceTree = "<group>";
 		};
 		CEC03A06240B33DD008B25B7 /* ApiClientTests */ = {
@@ -637,6 +659,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9F9470240CA7FF00F8934E /* CartTableViewCell.swift in Sources */,
 				CEF7D26D240A8EA800D8C358 /* Toy.swift in Sources */,
 				CEC03A58240BA042008B25B7 /* ToyListTableViewCell.swift in Sources */,
 				CE6D524324093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld in Sources */,
@@ -654,6 +677,7 @@
 				CEC03A45240B9ED2008B25B7 /* ToysCategoriesViewController.swift in Sources */,
 				CEC03A49240B9F1D008B25B7 /* ToyDetailsViewController.swift in Sources */,
 				CEF7D26F240A8EBD00D8C358 /* Story.swift in Sources */,
+				CE9F9472240CA81500F8934E /* CartViewController.swift in Sources */,
 				CEC03A20240B5E14008B25B7 /* MaterialDataUtils.swift in Sources */,
 				CEC03A51240B9FC4008B25B7 /* FavoritesTableViewController.swift in Sources */,
 				CE9F9449240BA85400F8934E /* UIHelper.swift in Sources */,
