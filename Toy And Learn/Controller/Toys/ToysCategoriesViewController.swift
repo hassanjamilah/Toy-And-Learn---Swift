@@ -26,9 +26,19 @@ class ToysCategoriesViewController: UIViewController   {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+       
         
     }
     
+    
+    fileprivate func setLastSelectedCategory() {
+        if let lastSelectedRos = UserDefaults.standard.value(forKey: UserDefaultsKeys.AllKeys.selectedCategory.rawValue) as? Int {
+            if lastSelectedRos < categories.count{
+                 self.categoriesTableView.selectRow(at: IndexPath(row: lastSelectedRos as! Int, section: 0), animated: true, scrollPosition: .middle)
+            }
+           
+        }
+    }
     
     func loadData(){
         UIHelper.showIndicator(loadingIndicator: loadingIndicator, show: true)
@@ -37,6 +47,7 @@ class ToysCategoriesViewController: UIViewController   {
                 self.categories = allCats
                 DispatchQueue.main.async {
                     self.categoriesTableView.reloadData()
+                    self.setLastSelectedCategory()
                 }
                 
             }else{
@@ -96,14 +107,14 @@ extension ToysCategoriesViewController:UITableViewDelegate , UITableViewDataSour
             cell.toyPrice.text = "\(toy.toyPrice)$"
             let imageName = toy.getImagesArray()[0]
             cell.loadImage(imageName: imageName)
-            
+            cell.setupForCatToySearch(isFromCat: false)
             return cell
         }else {
            
             
             let category = categories[indexPath.row]
             cell.toyAge.text = category.categoryName
-            
+            cell.setupForCatToySearch(isFromCat: true)
             
             cell.loadImage(imageName: category.categoryImageName)
             return cell

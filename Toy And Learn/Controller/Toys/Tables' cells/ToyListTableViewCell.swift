@@ -50,9 +50,10 @@ class ToyListTableViewCell: UITableViewCell {
     /**
      Used in the categories view controller when doing search for a toy
      */
-    func setupForCatToySearch(){
-        toyPrice.isHidden  = true
-        toyName.isHidden = true
+    func setupForCatToySearch(isFromCat:Bool){
+        
+        toyPrice.isHidden  = isFromCat
+        toyName.isHidden = isFromCat
         
     }
     

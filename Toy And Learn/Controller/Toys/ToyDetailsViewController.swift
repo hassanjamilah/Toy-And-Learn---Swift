@@ -34,14 +34,15 @@ class ToyDetailsViewController: UIViewController {
         super.viewDidLoad()
         loadToy()
         
-        let material = MaterialDataUtils.setMaterialFromToy(toy: toy)
-        let isFav  = MaterialDataUtils.checkIfMaterialIsFavorite(material: material)
+        
+        let isFav  = MaterialDataUtils.checkIfMaterialIsFavorite(serverID: toy.toyServerID)
         if isFav {
              toyFavoriteButton.setImage(UIImage(named: UIHelper.iconsNames.fav_filled.rawValue), for: .normal)
             toyIsFav =  true
         }
        
-        
+        let mats = MaterialDataUtils.getFavoriteMaterials()
+        print ( )
     }
     
     func loadToy(){

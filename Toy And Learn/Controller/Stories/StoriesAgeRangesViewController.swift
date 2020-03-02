@@ -19,17 +19,21 @@ class StoriesAgeRangesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         loadAges()
     }
     
     
     func loadAges(){
-        
+        if let lastSelectedRos = UserDefaults.standard.value(forKey: UserDefaultsKeys.AllKeys.selectedStoryAge.rawValue) as? Int {
+            agesTableView.selectRow(at: IndexPath(row: lastSelectedRos, section: 0), animated: true, scrollPosition: .middle)
+            
+            
+        }
     }
-
-   
-
+    
+    
+    
 }
 
 extension StoriesAgeRangesViewController:UITableViewDelegate , UITableViewDataSource{
@@ -39,7 +43,7 @@ extension StoriesAgeRangesViewController:UITableViewDelegate , UITableViewDataSo
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  minAges.count
-       }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
@@ -50,6 +54,7 @@ extension StoriesAgeRangesViewController:UITableViewDelegate , UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "toStoryList", sender: indexPath.row)
+        UserDefaults.standard.set(indexPath.row, forKey: UserDefaultsKeys.AllKeys.selectedStoryAge.rawValue)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -37,6 +37,7 @@ class ToysListViewController: UIViewController {
             if let toys = toys {
                 self.allToys = toys
                 self.toysTableView.reloadData()
+                
             }else {
                 UIHelper.showAlertDialog(message: .errorLodingToysList, title: .errorLodingToysList, sourceController: self)
             }
@@ -45,6 +46,7 @@ class ToysListViewController: UIViewController {
         }
     }
     
+   
     
 
     @IBAction func minAgeSliderAction(_ sender: Any) {
@@ -82,6 +84,7 @@ extension ToysListViewController:UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let toy = allToys[indexPath.row]
         performSegue(withIdentifier: "toToyDetails", sender: toy)
+       
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -179,22 +179,14 @@
                         <viewLayoutGuide key="safeArea" id="hhS-5p-9Z8"/>
                     </view>
                     <navigationItem key="navigationItem" id="j6o-wJ-Wrh">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="star" catalog="system" id="LLw-e8-0Af" userLabel="favorite button">
-                                <connections>
-                                    <action selector="addToFavAction:" destination="0fQ-cZ-qJt" id="BCZ-r2-Htw"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="NXD-b3-Zpk">
-                                <connections>
-                                    <action selector="shareAction:" destination="0fQ-cZ-qJt" id="hzI-lV-w4i"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="star" catalog="system" id="LLw-e8-0Af" userLabel="favorite button">
+                            <connections>
+                                <action selector="addToFavAction:" destination="0fQ-cZ-qJt" id="BCZ-r2-Htw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="favoriteButton" destination="LLw-e8-0Af" id="mgw-5o-QOL"/>
-                        <outlet property="shareButton" destination="NXD-b3-Zpk" id="Gjr-kv-oJf"/>
                         <outlet property="storyWebView" destination="ykX-I8-W9b" id="5fB-0r-FCG"/>
                     </connections>
                 </viewController>
@@ -1070,11 +1062,6 @@
                                     <segue destination="Tfg-iP-dY5" kind="show" id="ILr-VW-bFW"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="b2I-3o-Ka4">
-                                <connections>
-                                    <action selector="shareAction:" destination="kIv-Sb-RRs" id="Sag-Bt-DDA"/>
-                                </connections>
-                            </barButtonItem>
                             <barButtonItem title="Item" image="cart.badge.plus" catalog="system" id="Okb-D9-UiS">
                                 <connections>
                                     <action selector="addToCartAction:" destination="kIv-Sb-RRs" id="7HQ-4T-bRj"/>
@@ -1085,7 +1072,6 @@
                     <connections>
                         <outlet property="cartButton" destination="Aax-OY-Ul2" id="gxx-G3-puP"/>
                         <outlet property="imageLoadingIndicatore" destination="xBw-n2-tDR" id="Ap3-xb-ofE"/>
-                        <outlet property="shareButton" destination="b2I-3o-Ka4" id="QmI-55-poo"/>
                         <outlet property="toyAgeLabel" destination="hAl-sn-eAR" id="fMp-cI-ObY"/>
                         <outlet property="toyDescriptionTextView" destination="d7B-2A-4cu" id="DZN-c6-T5I"/>
                         <outlet property="toyFavoriteButton" destination="d6k-JT-YhY" id="vDk-pM-RuW"/>
@@ -1109,7 +1095,6 @@
         <image name="cart" catalog="system" width="64" height="50"/>
         <image name="cart.badge.plus" catalog="system" width="64" height="48"/>
         <image name="fav_empty" width="170.5" height="170.5"/>
-        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
         <image name="star" catalog="system" width="64" height="58"/>
         <image name="trash" catalog="system" width="60" height="64"/>
     </resources>

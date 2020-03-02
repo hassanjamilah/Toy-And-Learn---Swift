@@ -38,8 +38,8 @@ class MaterialDataUtils{
     /**
      Check if the material in  in th favorite to fill the favorite star
      */
-    class func checkIfMaterialIsFavorite(material:Materials)->Bool{
-        if let material = findMaterialByServerID(id: material.material_server_id) {
+    class func checkIfMaterialIsFavorite(serverID:Int)->Bool{
+        if let material = findMaterialByServerID(id: Int64(serverID)) {
             if material.material_is_favorite {
                 return true
             }
