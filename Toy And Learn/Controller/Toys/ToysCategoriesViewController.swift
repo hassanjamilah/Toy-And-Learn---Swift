@@ -78,6 +78,8 @@ extension ToysCategoriesViewController:UITableViewDelegate , UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
         performSegue(withIdentifier: "toToyList", sender: categories[indexPath.row].categoryID)
+        UserDefaults.standard.set(indexPath.row, forKey: UserDefaultsKeys.AllKeys.selectedCategory.rawValue)
+        
         
     }
     

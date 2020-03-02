@@ -20,6 +20,7 @@
 		CE9F9449240BA85400F8934E /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F9448240BA85400F8934E /* UIHelper.swift */; };
 		CE9F9470240CA7FF00F8934E /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F946F240CA7FF00F8934E /* CartTableViewCell.swift */; };
 		CE9F9472240CA81500F8934E /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F9471240CA81500F8934E /* CartViewController.swift */; };
+		CE9F9475240CB02C00F8934E /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F9474240CB02C00F8934E /* UserDefaultsKeys.swift */; };
 		CEC03A08240B33DD008B25B7 /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A07240B33DD008B25B7 /* ApiClientTests.swift */; };
 		CEC03A16240B36B0008B25B7 /* CodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A15240B36B0008B25B7 /* CodableTests.swift */; };
 		CEC03A1E240B5B1B008B25B7 /* DatabaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A1D240B5B1B008B25B7 /* DatabaseUtils.swift */; };
@@ -96,6 +97,7 @@
 		CE9F9448240BA85400F8934E /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		CE9F946F240CA7FF00F8934E /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		CE9F9471240CA81500F8934E /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		CE9F9474240CB02C00F8934E /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		CEC03A05240B33DD008B25B7 /* ApiClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApiClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC03A07240B33DD008B25B7 /* ApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientTests.swift; sourceTree = "<group>"; };
 		CEC03A09240B33DD008B25B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		CE58214D240A7D3600727B07 /* DatabaseUtils */ = {
 			isa = PBXGroup;
 			children = (
+				CE9F9473240CB00A00F8934E /* UserDefaults */,
 				CE6D524124093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld */,
 				CEC03A1D240B5B1B008B25B7 /* DatabaseUtils.swift */,
 				CEC03A1F240B5E14008B25B7 /* MaterialDataUtils.swift */,
@@ -319,6 +322,14 @@
 				CE9F946F240CA7FF00F8934E /* CartTableViewCell.swift */,
 			);
 			path = CartTableViewCell;
+			sourceTree = "<group>";
+		};
+		CE9F9473240CB00A00F8934E /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				CE9F9474240CB02C00F8934E /* UserDefaultsKeys.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		CEC03A06240B33DD008B25B7 /* ApiClientTests */ = {
@@ -673,6 +684,7 @@
 				CEC03A47240B9EFC008B25B7 /* ToysListViewController.swift in Sources */,
 				CE582157240A7DDB00727B07 /* ApiClient.swift in Sources */,
 				CEF7D26B240A8E9F00D8C358 /* Category.swift in Sources */,
+				CE9F9475240CB02C00F8934E /* UserDefaultsKeys.swift in Sources */,
 				CEC03A24240B5EFD008B25B7 /* StoryDataUtils.swift in Sources */,
 				CEC03A45240B9ED2008B25B7 /* ToysCategoriesViewController.swift in Sources */,
 				CEC03A49240B9F1D008B25B7 /* ToyDetailsViewController.swift in Sources */,
