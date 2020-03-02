@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Materials" representedClassName="Materials" syncable="YES" codeGenerationType="class">
+        <attribute name="material_desc" optional="YES" attributeType="String"/>
+        <attribute name="material_images_names" optional="YES" attributeType="String"/>
+        <attribute name="material_is_favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="material_is_in_Cart" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="material_max_age" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="material_min_age" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="material_name" optional="YES" attributeType="String"/>
+        <attribute name="material_price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="material_quantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="material_server_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Stories" representedClassName="Stories" syncable="YES" codeGenerationType="class">
+        <attribute name="story_desc" optional="YES" attributeType="String"/>
+        <attribute name="story_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="story_image_name" optional="YES" attributeType="String"/>
+        <attribute name="story_isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="story_title" optional="YES" attributeType="String"/>
+        <attribute name="story_url" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Materials" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="Stories" positionX="-549.16796875" positionY="72.30859375" width="128" height="133"/>
+    </elements>
+</model>
