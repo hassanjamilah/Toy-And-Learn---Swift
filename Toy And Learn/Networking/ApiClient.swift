@@ -15,7 +15,7 @@ class ApiClient {
     class func getAllToysCategories(handler:@escaping([Category]? , String?)->Void){
         let url = NetworkHelper.EndPoints.getAllToysCats.url
         NetworkHelper.taskForGetRequest(url: url, responseType: AllCats.self) { (categories, error) in
-            
+            DispatchQueue.main.async {
                 if let allCats = categories {
                     print (allCats.categories)
                     handler(allCats.categories , nil )
@@ -23,6 +23,8 @@ class ApiClient {
                     print ("Error in getting all categories : \(error?.localizedDescription ?? "Unknown error")")
                     handler(nil , "Error in getting the categories \(error?.localizedDescription ?? "Unknown error")")
                 }
+            }
+                
             
             
         }

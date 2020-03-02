@@ -19,12 +19,14 @@ class ToysListViewController: UIViewController {
     @IBOutlet weak var cartButton: UIBarButtonItem!
     @IBOutlet weak var toysTableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+   
     
     var categoyID:Int!
     var allToys = [Toy]()
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        
         
     }
     
@@ -42,8 +44,9 @@ class ToysListViewController: UIViewController {
             
         }
     }
-
     
+    
+
 
 }
 

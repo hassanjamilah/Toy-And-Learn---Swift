@@ -19,7 +19,7 @@ class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        cartTableView.separatorStyle = .singleLine
         
     }
     override func viewWillAppear(_ animated: Bool) {
