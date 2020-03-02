@@ -103,7 +103,7 @@ class MaterialDataUtils{
     
     
     class func setToyFromMaterial(material:Materials)->Toy{
-        let toy = Toy(toyMaxAge: Int(material.material_max_age), toyMinAge: Int(material.material_min_age), toyCategoryID: 0, toyDescription: material.description, toyServerID: Int(material.material_server_id), toyImagesString: material.material_images_names ?? "", toyName: material.material_name ?? "", toyPrice: Int(material.material_price))
+        let toy = Toy(toyMaxAge: Int(material.material_max_age), toyMinAge: Int(material.material_min_age), toyCategoryID: 0, toyDescription: material.material_desc ?? "", toyServerID: Int(material.material_server_id), toyImagesString: material.material_images_names ?? "", toyName: material.material_name ?? "", toyPrice: Int(material.material_price))
         return toy
     }
     

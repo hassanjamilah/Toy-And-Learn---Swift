@@ -92,19 +92,27 @@ extension FavoritesTableViewController:UITableViewDelegate , UITableViewDataSour
         var segId = ""
         switch indexPath.section {
         case 0:
-            segId = ""
+            segId = "fromFavToToy"
         case 1 :
-            segId = ""
+            segId = "fromFavToStory"
         default:
+            return
             
         }
+        
+        performSegue(withIdentifier: segId, sender: indexPath.row)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let row = sender as? Int else {
+            return
+        }
         if let controller = segue.destination as? ToyDetailsViewController {
-            
+            let toy = MaterialDataUtils.setToyFromMaterial(material: allToys[row])
+            controller.toy = toy
         }else if let controller = segue.destination as? StoryDetailsViewController {
-            
+            let story = StoryDataUtils.getStoryFromStories(sotries: allStories[row])
+            controller.story = story
         }
     }
 }
