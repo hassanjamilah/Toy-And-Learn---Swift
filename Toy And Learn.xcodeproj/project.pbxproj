@@ -21,6 +21,7 @@
 		CE9F9470240CA7FF00F8934E /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F946F240CA7FF00F8934E /* CartTableViewCell.swift */; };
 		CE9F9472240CA81500F8934E /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F9471240CA81500F8934E /* CartViewController.swift */; };
 		CE9F9475240CB02C00F8934E /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F9474240CB02C00F8934E /* UserDefaultsKeys.swift */; };
+		CEB8FA5C240CFD39009ACE52 /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CEB8FA5B240CFD39009ACE52 /* ReadMe.rtf */; };
 		CEC03A08240B33DD008B25B7 /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A07240B33DD008B25B7 /* ApiClientTests.swift */; };
 		CEC03A16240B36B0008B25B7 /* CodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A15240B36B0008B25B7 /* CodableTests.swift */; };
 		CEC03A1E240B5B1B008B25B7 /* DatabaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03A1D240B5B1B008B25B7 /* DatabaseUtils.swift */; };
@@ -98,6 +99,7 @@
 		CE9F946F240CA7FF00F8934E /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		CE9F9471240CA81500F8934E /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		CE9F9474240CB02C00F8934E /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		CEB8FA5B240CFD39009ACE52 /* ReadMe.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = "<group>"; };
 		CEC03A05240B33DD008B25B7 /* ApiClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApiClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC03A07240B33DD008B25B7 /* ApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientTests.swift; sourceTree = "<group>"; };
 		CEC03A09240B33DD008B25B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		CE6D522C24093CA000AB9C53 = {
 			isa = PBXGroup;
 			children = (
+				CEB8FA5B240CFD39009ACE52 /* ReadMe.rtf */,
 				CE58214A240A5C8900727B07 /* client_449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com.plist */,
 				CE6D523724093CA000AB9C53 /* Toy And Learn */,
 				CEF7D261240A8C2600D8C358 /* NetworkHelperTests */,
@@ -599,6 +602,7 @@
 				CE6D524824093CA300AB9C53 /* LaunchScreen.storyboard in Resources */,
 				CE6D524524093CA300AB9C53 /* Assets.xcassets in Resources */,
 				CE58214B240A5C8900727B07 /* client_449172734413-mbl0oqjv3omolbp3ae58k63rmu14jhps.apps.googleusercontent.com.plist in Resources */,
+				CEB8FA5C240CFD39009ACE52 /* ReadMe.rtf in Resources */,
 				CE6D524024093CA000AB9C53 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
