@@ -149,6 +149,17 @@ class MaterialDataUtils{
         
     }
     
+    
+    class func emptyCart(){
+        if let materials = getCartMaterials(){
+            for material in materials {
+                material.material_is_in_Cart = false
+                material.material_quantity = 0
+            }
+            try? DatabaseUtils.shared.context.save()
+        }
+        
+    }
    
     
 }

@@ -36,6 +36,10 @@ class CartViewController: UIViewController {
     }
     
     @IBAction func emptyCartAction(_ sender: Any) {
+        MaterialDataUtils.emptyCart()
+        allToys = [Materials]()
+        cartTableView.reloadData()
+        cartTotalLabel.text = "0"
     }
     
 
@@ -57,5 +61,21 @@ extension CartViewController:UITableViewDelegate , UITableViewDataSource{
         let totalForCell = toy.material_price * toy.material_quantity
         cell.toyTotalLabel.text = "\(totalForCell)"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let toy = MaterialDataUtils.setToyFromMaterial(material: allToys[indexPath.row])
+            let isFav = MaterialDataUtils.checkIfMaterialIsFavorite(serverID: toy.toyServerID)
+            MaterialDataUtils.addMaterialToFavoritesAndCart(toy: toy, isFavorit: isFav , isCart: false, quantity: 0)
+            allToys.remove(at: indexPath.row)
+            cartTableView.reloadData()
+            let total = MaterialDataUtils.calculateTheCartValue()
+            cartTotalLabel.text = "\(total)"
+            
+        }
     }
 }

@@ -198,7 +198,7 @@
         <scene sceneID="ije-1m-DkJ">
             <objects>
                 <navigationController id="5kz-Bh-w5a" userLabel="Toys Navigation Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Toys" id="7yC-hk-gpK"/>
+                    <tabBarItem key="tabBarItem" title="Toys" image="gift" catalog="system" id="7yC-hk-gpK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eDC-fp-hfd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -437,7 +437,7 @@
         <scene sceneID="yfr-zD-KFI">
             <objects>
                 <navigationController id="Aik-1j-inl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="xNg-db-cqC"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="star.lefthalf.fill" catalog="system" id="xNg-db-cqC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZnT-Z5-7kJ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1095,7 +1095,9 @@
         <image name="cart" catalog="system" width="64" height="50"/>
         <image name="cart.badge.plus" catalog="system" width="64" height="48"/>
         <image name="fav_empty" width="170.5" height="170.5"/>
+        <image name="gift" catalog="system" width="64" height="60"/>
         <image name="star" catalog="system" width="64" height="58"/>
+        <image name="star.lefthalf.fill" catalog="system" width="64" height="58"/>
         <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
