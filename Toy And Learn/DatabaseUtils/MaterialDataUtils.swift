@@ -50,9 +50,10 @@ class MaterialDataUtils{
     /**
      Get all the favorite materials
      */
-    class func  getFavoriteMaterials()->[Materials]{
+    class func  getFavoriteMaterials()->[Materials]?{
         let predicate = NSPredicate(format: " material_is_favorite = true ")
         let materials = getAllMaterials(predicate: predicate)
+        
         return materials
     }
     
@@ -62,19 +63,25 @@ class MaterialDataUtils{
     /**
      get All the materials in the cart
      */
-    class func getCartMaterials()->[Materials]{
+    class func getCartMaterials()->[Materials]?{
         let predicate = NSPredicate(format: " material_is_in_Cart = true")
-        let materials = getAllMaterials(predicate: predicate)
-        return materials
+        if let materials = getAllMaterials(predicate: predicate){
+             return materials
+        }else {
+            return nil
+        }
+       
     }
     
     class func calculateTheCartValue()->Int64{
-        let materials = getCartMaterials()
-        var sum:Int64 = 0
-        for material in materials {
-            sum  += material.material_price * material.material_quantity
+        if  let materials = getCartMaterials(){
+            var sum:Int64 = 0
+                  for material in materials {
+                      sum  += material.material_price * material.material_quantity
+                  }
+                  return sum
         }
-        return sum
+      return 0
         
     }
     
@@ -95,12 +102,18 @@ class MaterialDataUtils{
     }
     
     
+    class func setToyFromMaterial(material:Materials)->Toy{
+        let toy = Toy(toyMaxAge: Int(material.material_max_age), toyMinAge: Int(material.material_min_age), toyCategoryID: 0, toyDescription: material.description, toyServerID: Int(material.material_server_id), toyImagesString: material.material_images_names ?? "", toyName: material.material_name ?? "", toyPrice: Int(material.material_price))
+        return toy
+    }
+    
+    
     //MARK: Search Materials Methods
     /**
      Get all the materials from the database
      predicate : used to filter the materials
      */
-    class func getAllMaterials(predicate:NSPredicate?)->[Materials]{
+    class func getAllMaterials(predicate:NSPredicate?)->[Materials]?{
         let fetchedReques:NSFetchRequest<Materials> = Materials.fetchRequest()
         let sortDescriptor:NSSortDescriptor = NSSortDescriptor(key: "material_server_id", ascending: true)
         if let predicate = predicate {
@@ -115,7 +128,7 @@ class MaterialDataUtils{
             return materials
         }catch {
             print ("Error getting materials from the database \(error)")
-            return []
+            return nil
         }
         
     }
@@ -125,10 +138,13 @@ class MaterialDataUtils{
      */
     class func findMaterialByServerID(id:Int64)->Materials?{
         let predicate = NSPredicate(format: " material_server_id = \(id) ")
-        let materials = getAllMaterials(predicate: predicate)
-        if materials.count > 0 {
-            return materials[0]
+        if let materials = getAllMaterials(predicate: predicate){
+            if materials.count > 0 {
+                 return materials[0]
+            }
+            
         }
+       
         return nil
         
     }

@@ -75,6 +75,13 @@ class ToyDetailsViewController: UIViewController {
         loadImage()
     }
     
+    @IBAction func shareAction(_ sender: Any) {
+    }
+    
+    @IBAction func addToFavAction(_ sender: Any) {
+        MaterialDataUtils.addMaterialToFavoritesAndCart(toy: toy, isFavorit: true, isCart: false, quantity: nil )
+    }
+    
     func showImageLoadingIndicator(show:Bool){
         if show {
             imageLoadingIndicatore.startAnimating()

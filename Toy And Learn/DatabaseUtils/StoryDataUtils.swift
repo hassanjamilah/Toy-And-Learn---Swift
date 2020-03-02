@@ -56,6 +56,11 @@ class StoryDataUtils{
         }
     }
     
+    class func getStoryFromStories(sotries:Stories)->Story{
+        let story = Story(storyHtmlURLString: sotries.story_url ?? "", storyServerID: Int(sotries.story_id), storyImageName: sotries.story_image_name ?? "", storyMaxAge: 0, storyMinAge: 0, storyDescription: sotries.description, storyTitle: sotries.story_title ?? "")
+        return story
+    }
+    
     class func getStoryByServerID(storyServerId:Int64)->Stories?{
         let predicate = NSPredicate(format: " story_id = \(storyServerId) ")
         if let stories = getAllStories(predicate: predicate){

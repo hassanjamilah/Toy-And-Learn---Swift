@@ -9,22 +9,62 @@
 import UIKit
 
 class StoriesAgeRangesViewController: UIViewController {
-
+    //MARK: Outlets
+    @IBOutlet weak var storySearchView: UISearchBar!
+    @IBOutlet weak var agesTableView: UITableView!
+    
+    
+    let minAges = [1 , 3 , 5]
+    let maxAges = [3 , 5 , 12]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        loadAges()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func loadAges(){
+        
     }
-    */
 
+   
+
+}
+
+extension StoriesAgeRangesViewController:UITableViewDelegate , UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return  minAges.count
+       }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = getCellText(row: indexPath.row)
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toStoryList", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let controller = segue.destination as? StoriesListViewController else {
+            return
+        }
+        guard let row = sender as? Int else {
+            return
+        }
+        controller.minAge = minAges[row]
+        controller.maxAge = maxAges[row]
+        
+    }
+    
+    func getCellText(row:Int)->String{
+        return "\(minAges[row]) - \(maxAges[row]) Years"
+    }
 }

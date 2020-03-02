@@ -13,7 +13,6 @@
 		CE582157240A7DDB00727B07 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE582156240A7DDB00727B07 /* ApiClient.swift */; };
 		CE6D523924093CA000AB9C53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D523824093CA000AB9C53 /* AppDelegate.swift */; };
 		CE6D523B24093CA000AB9C53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D523A24093CA000AB9C53 /* SceneDelegate.swift */; };
-		CE6D523D24093CA000AB9C53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D523C24093CA000AB9C53 /* ViewController.swift */; };
 		CE6D524024093CA000AB9C53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6D523E24093CA000AB9C53 /* Main.storyboard */; };
 		CE6D524324093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE6D524124093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld */; };
 		CE6D524524093CA300AB9C53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6D524424093CA300AB9C53 /* Assets.xcassets */; };
@@ -87,7 +86,6 @@
 		CE6D523524093CA000AB9C53 /* Toy And Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Toy And Learn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6D523824093CA000AB9C53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6D523A24093CA000AB9C53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE6D523C24093CA000AB9C53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE6D523F24093CA000AB9C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE6D524224093CA000AB9C53 /* Toy_And_Learn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Toy_And_Learn.xcdatamodel; sourceTree = "<group>"; };
 		CE6D524424093CA300AB9C53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -244,7 +242,6 @@
 				CEC03A41240B9E96008B25B7 /* Toys */,
 				CEC03A42240B9EA0008B25B7 /* Stories */,
 				CEC03A43240B9EA7008B25B7 /* Favorites */,
-				CE6D523C24093CA000AB9C53 /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -642,7 +639,6 @@
 			files = (
 				CEF7D26D240A8EA800D8C358 /* Toy.swift in Sources */,
 				CEC03A58240BA042008B25B7 /* ToyListTableViewCell.swift in Sources */,
-				CE6D523D24093CA000AB9C53 /* ViewController.swift in Sources */,
 				CE6D524324093CA000AB9C53 /* Toy_And_Learn.xcdatamodeld in Sources */,
 				CE582155240A7DD000727B07 /* NetworkHelper.swift in Sources */,
 				CEC03A4F240B9F9B008B25B7 /* StoryDetailsViewController.swift in Sources */,

@@ -8,83 +8,103 @@
 
 import UIKit
 
-class FavoritesTableViewController: UITableViewController {
-
+class FavoritesTableViewController: UIViewController {
+    
+    @IBOutlet weak var favoritTableView: UITableView!
+    var allStories = [Stories]()
+    var allToys = [Materials]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadFavorites()
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    func loadFavorites(){
+        if let stories = StoryDataUtils.getFavoriteStories(){
+            allStories = stories
+            
+        }
+        if let toys = MaterialDataUtils.getFavoriteMaterials() {
+            allToys = toys
+        }
+        favoritTableView.reloadData()
     }
+    
+    
+    
+    
+    
+    
+}
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+extension FavoritesTableViewController:UITableViewDelegate , UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 2
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+   
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Favorite Toys"
+        case 1 :
+            return "Favorite Stories"
+        default:
+            return ""
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return allToys.count
+        }else if section == 1 {
+            return allStories.count
+        }else {
+            return 0
+        }
+        
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        switch  indexPath.section {
+        case 0:
+            let toy = allToys[indexPath.row]
+            cell.textLabel?.text = toy.material_name
+            return cell
+        case 1 :
+            let story = allStories[indexPath.row]
+            cell.textLabel?.text = story.story_title
+            return cell
+        default:
+            return cell
+        }
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var segId = ""
+        switch indexPath.section {
+        case 0:
+            segId = ""
+        case 1 :
+            segId = ""
+        default:
+            
+        }
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let controller = segue.destination as? ToyDetailsViewController {
+            
+        }else if let controller = segue.destination as? StoryDetailsViewController {
+            
+        }
     }
-    */
-
 }

@@ -58,6 +58,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Ae-AA-fBA" userLabel="ages table view">
                                 <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WHB-Y6-SrN" id="fEq-la-OnG"/>
+                                    <outlet property="delegate" destination="WHB-Y6-SrN" id="aiU-06-LuE"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -75,7 +79,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="D5i-Wa-Qhq"/>
                     <connections>
-                        <segue destination="S4Q-DY-BNt" kind="show" id="TLF-3M-reo"/>
+                        <outlet property="agesTableView" destination="1Ae-AA-fBA" id="BvB-fb-lJv"/>
+                        <outlet property="storySearchView" destination="oYQ-ow-onH" id="qN4-8c-UAP"/>
+                        <segue destination="S4Q-DY-BNt" kind="show" identifier="toStoryList" id="TLF-3M-reo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEj-g2-zHf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -101,6 +107,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="669"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="S4Q-DY-BNt" id="LTL-wk-k7F"/>
+                                            <outlet property="delegate" destination="S4Q-DY-BNt" id="tmg-nr-z9m"/>
+                                        </connections>
                                     </tableView>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="0se-6h-VU6" userLabel="stories list indicatore">
                                         <rect key="frame" x="197" y="324.5" width="20" height="20"/>
@@ -132,7 +142,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="zSR-wt-bB9"/>
                     <connections>
-                        <segue destination="0fQ-cZ-qJt" kind="show" id="ckP-tn-ASw"/>
+                        <outlet property="loadingIndicator" destination="0se-6h-VU6" id="5mb-SS-OCl"/>
+                        <outlet property="storiesTableView" destination="for-7B-0kE" id="Tef-PN-3rc"/>
+                        <outlet property="storySearchView" destination="CWl-Hz-OKI" id="HGw-jC-pxw"/>
+                        <segue destination="0fQ-cZ-qJt" kind="show" identifier="toStoryDetails" id="ckP-tn-ASw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VPJ-xv-ilm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -167,10 +180,23 @@
                     </view>
                     <navigationItem key="navigationItem" id="j6o-wJ-Wrh">
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="star" catalog="system" id="LLw-e8-0Af" userLabel="favorite button"/>
-                            <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="NXD-b3-Zpk"/>
+                            <barButtonItem title="Item" image="star" catalog="system" id="LLw-e8-0Af" userLabel="favorite button">
+                                <connections>
+                                    <action selector="addToFavAction:" destination="0fQ-cZ-qJt" id="BCZ-r2-Htw"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="NXD-b3-Zpk">
+                                <connections>
+                                    <action selector="shareAction:" destination="0fQ-cZ-qJt" id="hzI-lV-w4i"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="favoriteButton" destination="LLw-e8-0Af" id="mgw-5o-QOL"/>
+                        <outlet property="shareButton" destination="NXD-b3-Zpk" id="Gjr-kv-oJf"/>
+                        <outlet property="storyWebView" destination="ykX-I8-W9b" id="5fB-0r-FCG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dc3-5C-5rc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -318,7 +344,11 @@
                         <viewLayoutGuide key="safeArea" id="Mn8-kt-psx"/>
                     </view>
                     <navigationItem key="navigationItem" id="6FF-Fr-7Ey">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="DXa-bG-qcP"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="DXa-bG-qcP">
+                            <connections>
+                                <segue destination="Tfg-iP-dY5" kind="show" id="jkL-4m-Yo0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cartButton" destination="DXa-bG-qcP" id="p8M-dE-svU"/>
@@ -338,7 +368,7 @@
         <!--Favorites View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Favorites View Controller" customClass="ViewController" customModule="Toy_And_Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Favorites View Controller" customClass="FavoritesTableViewController" customModule="Toy_And_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -346,6 +376,28 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nr8-XX-iXc">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4wO-Jz-gMi">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4wO-Jz-gMi" id="1uv-ZM-riM">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Aq3-Ci-HId">
+                                        <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aq3-Ci-HId" id="B7o-2m-pmw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="dNk-Ij-Pfc"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TVO-vT-TOf"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -358,10 +410,29 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorites" id="BuC-Ai-hvF"/>
+                    <connections>
+                        <outlet property="favoritTableView" destination="Nr8-XX-iXc" id="250-qN-Ww1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="87" y="739"/>
+        </scene>
+        <!--cart view controller-->
+        <scene sceneID="BXh-xo-Ahr">
+            <objects>
+                <viewController id="Tfg-iP-dY5" userLabel="cart view controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tb2-VJ-sxe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qSn-4U-YtX"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FJt-WA-Ijj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0eS-Dg-H08" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1851" y="-1221"/>
         </scene>
         <!--Toys List View Controller-->
         <scene sceneID="mna-dn-9zz">
@@ -539,7 +610,11 @@
                         <viewLayoutGuide key="safeArea" id="kJy-uN-Nfz"/>
                     </view>
                     <navigationItem key="navigationItem" id="a6g-jm-aoF">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="cbb-MN-sSm"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="cbb-MN-sSm">
+                            <connections>
+                                <segue destination="Tfg-iP-dY5" kind="show" id="D0d-Rk-jfK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cartButton" destination="cbb-MN-sSm" id="FyG-JU-f1Z"/>
@@ -654,6 +729,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6k-JT-YhY">
                                         <rect key="frame" x="384" y="195" width="22" height="22"/>
                                         <state key="normal" image="star" catalog="system"/>
+                                        <connections>
+                                            <action selector="addToFavAction:" destination="kIv-Sb-RRs" eventType="touchUpInside" id="VTz-ag-7fx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -700,8 +778,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="X1v-MM-in4">
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="cart" catalog="system" id="Aax-OY-Ul2"/>
-                            <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="b2I-3o-Ka4"/>
+                            <barButtonItem title="Item" image="cart" catalog="system" id="Aax-OY-Ul2">
+                                <connections>
+                                    <segue destination="Tfg-iP-dY5" kind="show" id="ILr-VW-bFW"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="b2I-3o-Ka4">
+                                <connections>
+                                    <action selector="shareAction:" destination="kIv-Sb-RRs" id="Sag-Bt-DDA"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -732,4 +818,7 @@
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
         <image name="star" catalog="system" width="64" height="58"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ILr-VW-bFW"/>
+    </inferredMetricsTieBreakers>
 </document>

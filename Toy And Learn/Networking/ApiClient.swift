@@ -61,11 +61,14 @@ class ApiClient {
     class func searchStory (minAge:Int , maxAge:Int , keyword:String , handler:@escaping([Story]? , String? )->Void){
         let url = NetworkHelper.EndPoints.SearchStory(minAge, maxAge, keyword).url
         NetworkHelper.taskForGetRequest(url: url, responseType: AllStories.self) { (allStories, error) in
-            if let allStories = allStories {
-                handler(allStories.stories , nil )
-            }else {
-                handler(nil , "Error getting the stories \(error?.localizedDescription ?? "Unknown error")")
+            DispatchQueue.main.async {
+                if let allStories = allStories {
+                    handler(allStories.stories , nil )
+                }else {
+                    handler(nil , "Error getting the stories \(error?.localizedDescription ?? "Unknown error")")
+                }
             }
+            
         }
     }
     

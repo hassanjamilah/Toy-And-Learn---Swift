@@ -29,7 +29,8 @@ class ToysListViewController: UIViewController {
     }
     
     func loadData(){
-        showIndicator(show: true)
+        UIHelper.showIndicator(loadingIndicator: loadingIndicator, show: true)
+        
         ApiClient.searchToy(categoryID: categoyID, minAge: 1, maxAge: 20, keyword: "") { (toys, errorStr) in
             if let toys = toys {
                 self.allToys = toys
@@ -37,19 +38,12 @@ class ToysListViewController: UIViewController {
             }else {
                 UIHelper.showAlertDialog(message: .errorLodingToysList, title: .errorLodingToysList, sourceController: self)
             }
-            self.showIndicator(show: false)
+            UIHelper.showIndicator(loadingIndicator: self.loadingIndicator, show: false)
+            
         }
     }
 
-    func showIndicator (show:Bool){
-        if show {
-            loadingIndicator.startAnimating()
-            loadingIndicator.isHidden = false
-        }else {
-            loadingIndicator.stopAnimating()
-            loadingIndicator.isHidden = true
-        }
-    }
+    
 
 }
 
